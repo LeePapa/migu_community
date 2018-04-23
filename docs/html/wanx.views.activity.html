@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>wanx.views.activity package &mdash; wanx 1.1 文档</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="wanx 1.1 文档" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="wanx-views-activity-package">
+<h1>wanx.views.activity package<a class="headerlink" href="#wanx-views-activity-package" title="永久链接至标题">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="永久链接至标题">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.activity.activity.html">wanx.views.activity.activity module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.activity.comment.html">wanx.views.activity.comment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.activity.live.html">wanx.views.activity.live module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.activity.video.html">wanx.views.activity.video module</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="module-wanx.views.activity">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-wanx.views.activity" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id1">
+<h3>接口中的对象属性定义<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
+<div class="section" id="activityvideo">
+<h4>活动视频（ActivityVideo）:<a class="headerlink" href="#activityvideo" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="19%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>activity_video</td>
+<td>string</td>
+<td>参赛视频唯一标识</td>
+</tr>
+<tr class="row-odd"><td>activity_id</td>
+<td>string</td>
+<td>视频描述</td>
+</tr>
+<tr class="row-even"><td>video_id</td>
+<td>string</td>
+<td>视频唯一标识</td>
+</tr>
+<tr class="row-odd"><td>cover</td>
+<td>url</td>
+<td>视频封面</td>
+</tr>
+<tr class="row-even"><td>author</td>
+<td>User</td>
+<td>视频作者</td>
+</tr>
+<tr class="row-odd"><td>like_count</td>
+<td>bool</td>
+<td>被点赞次数</td>
+</tr>
+<tr class="row-even"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+<tr class="row-odd"><td>comment_count</td>
+<td>int</td>
+<td>评论数量</td>
+</tr>
+<tr class="row-even"><td>vv</td>
+<td>int</td>
+<td>播放次数</td>
+</tr>
+<tr class="row-odd"><td>duration</td>
+<td>int</td>
+<td>时长（秒）</td>
+</tr>
+<tr class="row-even"><td>url</td>
+<td>url</td>
+<td>视频播放url</td>
+</tr>
+<tr class="row-odd"><td>vote</td>
+<td>int</td>
+<td>投票数</td>
+</tr>
+<tr class="row-even"><td>is_voted</td>
+<td>bool</td>
+<td>是否已投票</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="comment">
+<h4>评论（Comment）:<a class="headerlink" href="#comment" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="19%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>comment_id</td>
+<td>string</td>
+<td>评论唯一标识</td>
+</tr>
+<tr class="row-odd"><td>activity_id</td>
+<td>string</td>
+<td>视频ID</td>
+</tr>
+<tr class="row-even"><td>author</td>
+<td>User</td>
+<td>评论作者</td>
+</tr>
+<tr class="row-odd"><td>content</td>
+<td>string</td>
+<td>评论内容</td>
+</tr>
+<tr class="row-even"><td>create_at</td>
+<td>float</td>
+<td>评论时间</td>
+</tr>
+<tr class="row-odd"><td>like</td>
+<td>int</td>
+<td>被点赞次数</td>
+</tr>
+<tr class="row-even"><td>liked</td>
+<td>int</td>
+<td>当前用户是否已点赞</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="gameactivity">
+<h4>活动游戏（GameActivity）:<a class="headerlink" href="#gameactivity" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="19%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>game_id</td>
+<td>string</td>
+<td>游戏ID</td>
+</tr>
+<tr class="row-odd"><td>icon</td>
+<td>string</td>
+<td>游戏icon</td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+<td>游戏名称</td>
+</tr>
+<tr class="row-odd"><td>is_download</td>
+<td>bool</td>
+<td>是否可下载</td>
+</tr>
+<tr class="row-even"><td>package_id</td>
+<td>string</td>
+<td>游戏包id</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="activityconfig">
+<h4>活动配置（ActivityConfig）:<a class="headerlink" href="#activityconfig" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>activity_id</td>
+<td>string</td>
+<td>活动ID</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>string</td>
+<td>活动描述(app内使用)</td>
+</tr>
+<tr class="row-even"><td>vote_text</td>
+<td>string</td>
+<td>投票按钮显示文字</td>
+</tr>
+<tr class="row-odd"><td>voted_text</td>
+<td>string</td>
+<td>投票按钮显示文字</td>
+</tr>
+<tr class="row-even"><td>activity_url</td>
+<td>string</td>
+<td>活动url</td>
+</tr>
+<tr class="row-odd"><td>sort</td>
+<td>string</td>
+<td>活动排序依据</td>
+</tr>
+<tr class="row-even"><td>share_banner</td>
+<td>string</td>
+<td>活动分享页广告</td>
+</tr>
+<tr class="row-odd"><td>share_description</td>
+<td>string</td>
+<td>活动分享页活动介绍</td>
+</tr>
+<tr class="row-even"><td>share_vote_text</td>
+<td>string</td>
+<td>活动分享页投票按钮文字</td>
+</tr>
+<tr class="row-odd"><td>share_voted_text</td>
+<td>string</td>
+<td>活动分享页已投票按钮文字</td>
+</tr>
+<tr class="row-even"><td>activity_rule</td>
+<td>string</td>
+<td>活动规则</td>
+</tr>
+<tr class="row-odd"><td>status</td>
+<td>string</td>
+<td>活动状态</td>
+</tr>
+<tr class="row-even"><td>activity_banner</td>
+<td>string</td>
+<td>活动页banner</td>
+</tr>
+<tr class="row-odd"><td>button_join</td>
+<td>string</td>
+<td>我要参加按钮&#8217;)</td>
+</tr>
+<tr class="row-even"><td>rule_image</td>
+<td>string</td>
+<td>游玩大礼图片</td>
+</tr>
+<tr class="row-odd"><td>button_lp</td>
+<td>string</td>
+<td>拉票按钮</td>
+</tr>
+<tr class="row-even"><td>button_tp</td>
+<td>string</td>
+<td>投票按钮</td>
+</tr>
+<tr class="row-odd"><td>button_tp_link</td>
+<td>string</td>
+<td>投票按钮链接</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">內容目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">wanx.views.activity package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-wanx.views.activity">Module contents</a><ul>
+<li><a class="reference internal" href="#id1">接口中的对象属性定义</a><ul>
+<li><a class="reference internal" href="#activityvideo">活动视频（ActivityVideo）:</a></li>
+<li><a class="reference internal" href="#comment">评论（Comment）:</a></li>
+<li><a class="reference internal" href="#gameactivity">活动游戏（GameActivity）:</a></li>
+<li><a class="reference internal" href="#activityconfig">活动配置（ActivityConfig）:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/wanx.views.activity.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的术语，模块，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, yang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/wanx.views.activity.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

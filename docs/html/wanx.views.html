@@ -1,0 +1,2367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>wanx.views package &mdash; wanx 1.1 文档</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="wanx 1.1 文档" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="wanx-views-package">
+<h1>wanx.views package<a class="headerlink" href="#wanx-views-package" title="永久链接至标题">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="永久链接至标题">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.activity.html">wanx.views.activity package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="wanx.views.activity.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="wanx.views.activity.activity.html">wanx.views.activity.activity module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wanx.views.activity.comment.html">wanx.views.activity.comment module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wanx.views.activity.live.html">wanx.views.activity.live module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wanx.views.activity.video.html">wanx.views.activity.video module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="wanx.views.activity.html#module-wanx.views.activity">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="wanx.views.activity.html#id1">接口中的对象属性定义</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="wanx.views.activity.html#activityvideo">活动视频（ActivityVideo）:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wanx.views.activity.html#comment">评论（Comment）:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wanx.views.activity.html#gameactivity">活动游戏（GameActivity）:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wanx.views.activity.html#activityconfig">活动配置（ActivityConfig）:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="永久链接至标题">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.async.html">wanx.views.async module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.comment.html">wanx.views.comment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.credit.html">wanx.views.credit module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.datang.html">wanx.views.datang module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.game.html">wanx.views.game module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.gift.html">wanx.views.gift module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.home.html">wanx.views.home module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.migu.html">wanx.views.migu module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.msg.html">wanx.views.msg module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.store.html">wanx.views.store module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.task.html">wanx.views.task module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.traffic.html">wanx.views.traffic module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.upload.html">wanx.views.upload module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.user.html">wanx.views.user module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.video.html">wanx.views.video module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.xlive.html">wanx.views.xlive module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.info.html">wanx.views.info module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wanx.views.show.html">wanx.views.show module</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="module-wanx.views">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-wanx.views" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id1">
+<h3>接口中的对象属性定义<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
+<div class="section" id="user">
+<h4>用户（User）:<a class="headerlink" href="#user" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="17%" />
+<col width="49%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>user_id</td>
+<td>string</td>
+<td>用户唯一标识</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td>string</td>
+<td>用户名</td>
+</tr>
+<tr class="row-even"><td>nickname</td>
+<td>string</td>
+<td>用户昵称</td>
+</tr>
+<tr class="row-odd"><td>signature</td>
+<td>string</td>
+<td>用户签名</td>
+</tr>
+<tr class="row-even"><td>logo</td>
+<td>url</td>
+<td>用户小头像</td>
+</tr>
+<tr class="row-odd"><td>photo</td>
+<td>url</td>
+<td>用户大头像</td>
+</tr>
+<tr class="row-even"><td>birthday</td>
+<td>string</td>
+<td>生日</td>
+</tr>
+<tr class="row-odd"><td>email</td>
+<td>string</td>
+<td>邮箱地址</td>
+</tr>
+<tr class="row-even"><td>phone</td>
+<td>string</td>
+<td>手机号码</td>
+</tr>
+<tr class="row-odd"><td>binding</td>
+<td>dict</td>
+<td>平台绑定信息</td>
+</tr>
+<tr class="row-even"><td>gender</td>
+<td>int</td>
+<td>性别，0未知，1男，2女</td>
+</tr>
+<tr class="row-odd"><td>favor_count</td>
+<td>int</td>
+<td>收藏视频数量</td>
+</tr>
+<tr class="row-even"><td>subscriptions</td>
+<td>int</td>
+<td>订阅游戏数量</td>
+</tr>
+<tr class="row-odd"><td>video_count</td>
+<td>int</td>
+<td>发布视频数量</td>
+</tr>
+<tr class="row-even"><td>follower_count</td>
+<td>int</td>
+<td>粉丝数</td>
+</tr>
+<tr class="row-odd"><td>following_count</td>
+<td>int</td>
+<td>关注数</td>
+</tr>
+<tr class="row-even"><td>is_followed</td>
+<td>bool</td>
+<td>当前用户是否已关注该用户</td>
+</tr>
+<tr class="row-odd"><td>gem</td>
+<td>int</td>
+<td>游票数量(隐私数据, 需登录)</td>
+</tr>
+<tr class="row-even"><td>gold</td>
+<td>int</td>
+<td>游米数量(隐私数据, 需登录)</td>
+</tr>
+<tr class="row-odd"><td>gift_num</td>
+<td>int</td>
+<td>礼物数量(隐私数据, 需登录)</td>
+</tr>
+<tr class="row-even"><td>status</td>
+<td>int</td>
+<td>用户状态，0：在线，1：封禁</td>
+</tr>
+<tr class="row-odd"><td>bans</td>
+<td>dict</td>
+<td>用户封禁信息，
+    lift_at：解封时间(timestamp)，
+    reason:封禁理由(string)，
+    video:是否禁止发布视频(bool)，
+    live:是否禁止发起直播(bool)，
+    comment:是否禁止发布评论(bool)，
+    message:是否禁止私信(bool)，
+    login:是否禁止登录(bool)
+</td>
+</tr>
+<tr class="row-even"><td>live_number</td>
+<td>string</td>
+<td>用户直播间房间号</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="section" id="game">
+<h4>游戏（Game）:<a class="headerlink" href="#game" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>game_id</td>
+<td>string</td>
+<td>游戏唯一标识</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td>string</td>
+<td>游戏名称</td>
+</tr>
+<tr class="row-even"><td>icon</td>
+<td>url</td>
+<td>游戏图标</td>
+</tr>
+<tr class="row-odd"><td>big_icon</td>
+<td>url</td>
+<td>游戏大图标</td>
+</tr>
+<tr class="row-even"><td>cover</td>
+<td>url</td>
+<td>游戏封面</td>
+</tr>
+<tr class="row-odd"><td>url</td>
+<td>url</td>
+<td>Android下载链接</td>
+</tr>
+<tr class="row-even"><td>contain_sdk</td>
+<td>bool</td>
+<td>是否包含录制SDK</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>string</td>
+<td>游戏描述</td>
+</tr>
+<tr class="row-even"><td>intro</td>
+<td>string</td>
+<td>游戏简介</td>
+</tr>
+<tr class="row-odd"><td>slogan</td>
+<td>string</td>
+<td>游戏标语</td>
+</tr>
+<tr class="row-even"><td>developer</td>
+<td>string</td>
+<td>游戏开发商</td>
+</tr>
+<tr class="row-odd"><td>subscription_count</td>
+<td>int</td>
+<td>被订阅次数</td>
+</tr>
+<tr class="row-even"><td>video_count</td>
+<td>int</td>
+<td>视频总数</td>
+</tr>
+<tr class="row-odd"><td>subscribed</td>
+<td>int</td>
+<td>当前用户是否已订阅该游戏</td>
+</tr>
+<tr class="row-even"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+<tr class="row-odd"><td>package_id</td>
+<td>string</td>
+<td>游戏软件包标识</td>
+</tr>
+<tr class="row-even"><td>package_version</td>
+<td>string</td>
+<td>游戏展示版本号</td>
+</tr>
+<tr class="row-odd"><td>package_size</td>
+<td>float</td>
+<td>游戏包大小</td>
+</tr>
+<tr class="row-even"><td>popular_count</td>
+<td>int</td>
+<td>热门视频个数</td>
+</tr>
+<tr class="row-odd"><td>bid</td>
+<td>string</td>
+<td>对应咪咕游戏ID</td>
+</tr>
+<tr class="row-even"><td>is_download</td>
+<td>bool</td>
+<td>是否可下载（Android）</td>
+<tr class="row-odd"><td>is_subscribe</td>
+<td>bool</td>
+<td>是否可订阅（Android）</td>
+<tr class="row-even"><td>url_ios</td>
+<td>bool</td>
+<td>IOS跳转链接</td>
+<tr class="row-odd"><td>is_download_ios</td>
+<td>bool</td>
+<td>是否可下载（IOS）</td>
+<tr class="row-even"><td>is_subscribe_ios</td>
+<td>bool</td>
+<td>是否可订阅（IOS）</td>
+</tr>
+<tr class="row-odd"><td>on_assistant</td>
+<td>bool</td>
+<td>是否在游玩助手上架</td>
+</tr>
+<tr class="row-even"><td>covers</td>
+<td>&lt;url&gt;list</td>
+<td>封面图片（480*800）</td>
+</tr>
+<tr class="row-odd"><td>status</td>
+<td>int</td>
+<td>游戏状态</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="section" id="webgame">
+<h4>页游（WebGame）:<a class="headerlink" href="#webgame" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>game_id</td>
+<td>string</td>
+<td>页游唯一标识</td>
+<tr class="row-odd"><td>migu_code</td>
+<td>string</td>
+<td>页游业务代码（与咪咕游戏平台保持一致）</td>
+</tr>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+<td>页游名称</td>
+</tr>
+<tr class="row-odd"><td>url</td>
+<td>url</td>
+<td>页游访问地址</td>
+</tr>
+<tr class="row-even"><td>description</td>
+<td>string</td>
+<td>页游描述</td>
+</tr>
+<tr class="row-odd"><td>categories</td>
+<td>string</td>
+<td>页游分类名称</td>
+</tr>
+<tr class="row-even"><td>engine</td>
+<td>int</td>
+<td>页游引擎</td>
+</tr>
+<tr class="row-odd"><td>intro</td>
+<td>string</td>
+<td>页游简介</td>
+</tr>
+<tr class="row-even"><td>slogan</td>
+<td>string</td>
+<td>页游标语</td>
+</tr>
+<tr class="row-odd"><td>developer</td>
+<td>string</td>
+<td>页游开发者</td>
+</tr>
+<tr class="row-even"><td>cover</td>
+<td>url</td>
+<td>页游封面</td>
+</tr>
+<tr class="row-odd"><td>icon</td>
+<td>url</td>
+<td>页游图标</td>
+</tr>
+<tr class="row-even"><td>big_icon</td>
+<td>url</td>
+<td>页游大图标</td>
+</tr>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+<tr class="row-even"><td>order</td>
+<td>int</td>
+<td>显示顺序</td>
+</tr>
+<tr class="row-odd"><td>orientation</td>
+<td>int</td>
+<td>游戏属性，0：竖屏游戏，1：横屏游戏</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="video">
+<h4>视频（Video）:<a class="headerlink" href="#video" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="16%" />
+<col width="53%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>video_id</td>
+<td>string</td>
+<td>视频唯一标识</td>
+</tr>
+<tr class="row-odd"><td>title</td>
+<td>string</td>
+<td>视频描述</td>
+</tr>
+<tr class="row-even"><td>ratio</td>
+<td>string</td>
+<td>分辨率，格式:宽x高，如1280x800</td>
+</tr>
+<tr class="row-odd"><td>url</td>
+<td>url</td>
+<td>视频地址</td>
+</tr>
+<tr class="row-even"><td>cover</td>
+<td>url</td>
+<td>视频封面</td>
+</tr>
+<tr class="row-odd"><td>author</td>
+<td>User</td>
+<td>视频作者</td>
+</tr>
+<tr class="row-even"><td>is_liked</td>
+<td>bool</td>
+<td>当前用户是否已点赞</td>
+</tr>
+<tr class="row-odd"><td>like_count</td>
+<td>bool</td>
+<td>被点赞次数</td>
+</tr>
+<tr class="row-even"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+<tr class="row-odd"><td>is_favored</td>
+<td>bool</td>
+<td>当前用户是否已经收藏</td>
+</tr>
+<tr class="row-even"><td>game</td>
+<td>Game</td>
+<td>视频所属游戏信息</td>
+</tr>
+<tr class="row-odd"><td>comment_count</td>
+<td>int</td>
+<td>评论数量</td>
+</tr>
+<tr class="row-even"><td>gift_count</td>
+<td>int</td>
+<td>礼物次数</td>
+</tr>
+<tr class="row-odd"><td>gift_num</td>
+<td>int</td>
+<td>礼物数量</td>
+</tr>
+<tr class="row-even"><td>vv</td>
+<td>int</td>
+<td>播放次数</td>
+</tr>
+<tr class="row-odd"><td>duration</td>
+<td>int</td>
+<td>时长（秒）</td>
+</tr>
+<tr class="row-even"><td>share_url</td>
+<td>url</td>
+<td>分享链接</td>
+</tr>
+<tr class="row-odd"><td>gift_count</td>
+<td>int</td>
+<td>送礼物次数</td>
+</tr>
+<tr class="row-even"><td>gift_num</td>
+<td>int</td>
+<td>送礼物数量</td>
+</tr>
+<tr class="row-odd"><td>is_online</td>
+<td>bool</td>
+<td>是否在线</td>
+</tr>
+<tr class="row-even"><td>event_id</td>
+<td>int</td>
+<td>直播间ID</td>
+</tr>
+<tr class="row-odd"><td>show</td>
+<td>&lt;Show&gt;</td>
+<td>视频所属栏目信息</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="comment">
+<h4>评论（Comment）:<a class="headerlink" href="#comment" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="19%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>comment_id</td>
+<td>string</td>
+<td>评论唯一标识</td>
+</tr>
+<tr class="row-odd"><td>video_id</td>
+<td>string</td>
+<td>视频ID</td>
+</tr>
+<tr class="row-even"><td>author</td>
+<td>User</td>
+<td>评论作者</td>
+</tr>
+<tr class="row-odd"><td>content</td>
+<td>string</td>
+<td>评论内容</td>
+</tr>
+<tr class="row-even"><td>create_at</td>
+<td>float</td>
+<td>评论时间</td>
+</tr>
+<tr class="row-odd"><td>reply</td>
+<td>int</td>
+<td>被回复次数</td>
+</tr>
+<tr class="row-even"><td>like</td>
+<td>int</td>
+<td>被点赞次数</td>
+</tr>
+<tr class="row-odd"><td>liked</td>
+<td>int</td>
+<td>当前用户是否已点赞</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="message">
+<h4>点赞&amp;评论消息（Message）:<a class="headerlink" href="#message" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="10%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>msg_id</td>
+<td>string</td>
+<td>消息唯一标识</td>
+</tr>
+<tr class="row-odd"><td>ctype</td>
+<td>string</td>
+<td>对象类型(video:视频, comment:评论， reply:评论回复)</td>
+</tr>
+<tr class="row-even"><td>obj</td>
+<td>string</td>
+<td>对象ID</td>
+</tr>
+<tr class="row-odd"><td>action</td>
+<td>string</td>
+<td>产生消息动作(like:点赞, comment:评论, reply:回复, gift:送礼)</td>
+</tr>
+<tr class="row-even"><td>operator</td>
+<td>string</td>
+<td>操作用户</td>
+</tr>
+<tr class="row-odd"><td>create_at</td>
+<td>timestamp</td>
+<td>创建时间</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sysmessage">
+<h4>系统消息（SysMessage）:<a class="headerlink" href="#sysmessage" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="19%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>msg_id</td>
+<td>string</td>
+<td>消息唯一标识</td>
+</tr>
+<tr class="row-odd"><td>title</td>
+<td>string</td>
+<td>标题</td>
+</tr>
+<tr class="row-even"><td>image</td>
+<td>url</td>
+<td>缩略图</td>
+</tr>
+<tr class="row-odd"><td>content</td>
+<td>string</td>
+<td>正文</td>
+</tr>
+<tr class="row-even"><td>link</td>
+<td>string</td>
+<td>跳转链接</td>
+</tr>
+<tr class="row-odd"><td>create_at</td>
+<td>timestamp</td>
+<td>创建时间</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="letter">
+<h4>私信（Letter）:<a class="headerlink" href="#letter" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="19%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>msg_id</td>
+<td>string</td>
+<td>消息唯一标识</td>
+</tr>
+<tr class="row-odd"><td>sender</td>
+<td>string</td>
+<td>发送者</td>
+</tr>
+<tr class="row-even"><td>content</td>
+<td>string</td>
+<td>内容</td>
+</tr>
+<tr class="row-odd"><td>create_at</td>
+<td>timestamp</td>
+<td>创建时间</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="reply">
+<h4>评论回复（Reply）:<a class="headerlink" href="#reply" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="19%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>reply_id</td>
+<td>string</td>
+<td>回复唯一标识</td>
+</tr>
+<tr class="row-odd"><td>reply_from</td>
+<td>string</td>
+<td>回复者</td>
+</tr>
+<tr class="row-even"><td>reply_to</td>
+<td>string</td>
+<td>被回复者</td>
+</tr>
+<tr class="row-odd"><td>content</td>
+<td>string</td>
+<td>回复内容</td>
+</tr>
+<tr class="row-even"><td>reply_count</td>
+<td>int</td>
+<td>被回复次数</td>
+</tr>
+<tr class="row-odd"><td>create_at</td>
+<td>timestamp</td>
+<td>创建时间</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="product">
+<h4>物品（Product）:<a class="headerlink" href="#product" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="8%" />
+<col width="76%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>product_id</td>
+<td>int</td>
+<td>物品ID</td>
+</tr>
+<tr class="row-odd"><td>product_image</td>
+<td>url</td>
+<td>物品图片</td>
+</tr>
+<tr class="row-even"><td>product_name</td>
+<td>string</td>
+<td>物品名称</td>
+</tr>
+<tr class="row-odd"><td>product_type</td>
+<td>int</td>
+<td>物品类型(1-10依次: 游票,游米,礼物,全网流量,移动流量,联通流量,电信流量,实物,礼包,话费)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="goldlog">
+<h4>游米交易记录（GoldLog）:<a class="headerlink" href="#goldlog" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="10%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>gold</td>
+<td>int</td>
+<td>游米数量</td>
+</tr>
+<tr class="row-odd"><td>action</td>
+<td>int</td>
+<td>交易类型(1:任务奖励, 2:购买礼物, 3:兑换物品, 4:抽奖消费, 5:抽奖)</td>
+</tr>
+<tr class="row-even"><td>desc</td>
+<td>string</td>
+<td>交易描述</td>
+</tr>
+<tr class="row-odd"><td>create_at</td>
+<td>timestamp</td>
+<td>交易时间</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="gemlog">
+<h4>游票交易记录（GemLog）:<a class="headerlink" href="#gemlog" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="10%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>gem</td>
+<td>int</td>
+<td>游票数量</td>
+</tr>
+<tr class="row-odd"><td>action</td>
+<td>int</td>
+<td>交易类型(1:任务奖励, 2:购买礼物, 3:兑换物品, 4:抽奖消费, 5:抽奖)</td>
+</tr>
+<tr class="row-even"><td>desc</td>
+<td>string</td>
+<td>交易描述</td>
+</tr>
+<tr class="row-odd"><td>create_at</td>
+<td>timestamp</td>
+<td>交易时间</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="usertask">
+<h4>用户任务（UserTask）:<a class="headerlink" href="#usertask" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="14%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>user_id</td>
+<td>string</td>
+<td>用户ID</td>
+</tr>
+<tr class="row-odd"><td>task_id</td>
+<td>int</td>
+<td>任务ID</td>
+</tr>
+<tr class="row-even"><td>title</td>
+<td>string</td>
+<td>任务标题</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>string</td>
+<td>任务描述</td>
+</tr>
+<tr class="row-even"><td>image</td>
+<td>url</td>
+<td>任务图片</td>
+</tr>
+<tr class="row-odd"><td>task_type</td>
+<td>int</td>
+<td>任务类型(1:新手, 2:日常, 3:游戏)</td>
+</tr>
+<tr class="row-even"><td>action</td>
+<td>int</td>
+<td>任务条件</td>
+</tr>
+<tr class="row-odd"><td>num</td>
+<td>int</td>
+<td>条件数值</td>
+</tr>
+<tr class="row-even"><td>finish_num</td>
+<td>int</td>
+<td>已完成数值</td>
+</tr>
+<tr class="row-odd"><td>game_id</td>
+<td>string</td>
+<td>游戏ID(游戏任务)</td>
+</tr>
+<tr class="row-even"><td>task_status</td>
+<td>int</td>
+<td>完成状态(1:未完成, 2:已完成, 3:已领取)</td>
+</tr>
+<tr class="row-odd"><td>btn_desc</td>
+<td>string</td>
+<td>按钮描述</td>
+</tr>
+<tr class="row-even"><td>button_action</td>
+<td>string</td>
+<td>按钮跳转链接</td>
+</tr>
+<tr class="row-odd"><td>cover</td>
+<td>string</td>
+<td>封面图片url</td>
+</tr>
+<tr class="row-even"><td>topest</td>
+<td>bool</td>
+<td>是否置顶（只有一个任务置顶，读取到置顶任务时，直接放到置顶位置）</td>
+</tr>
+<tr class="row-odd"><td>order</td>
+<td>int</td>
+<td>显示顺序（已排序）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="reward">
+<h4>任务奖励（Reward）:<a class="headerlink" href="#reward" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="19%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>name</td>
+<td>string</td>
+<td>奖励物品名称</td>
+</tr>
+<tr class="row-odd"><td>num</td>
+<td>int</td>
+<td>奖励物品数量</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="gift">
+<h4>礼物（Gift）:<a class="headerlink" href="#gift" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="12%" />
+<col width="64%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>gift_id</td>
+<td>int</td>
+<td>礼物ID</td>
+</tr>
+<tr class="row-odd"><td>product_id</td>
+<td>int</td>
+<td>物品ID</td>
+</tr>
+<tr class="row-even"><td>product_name</td>
+<td>string</td>
+<td>物品名称</td>
+</tr>
+<tr class="row-odd"><td>product_image</td>
+<td>url</td>
+<td>物品图片</td>
+</tr>
+<tr class="row-even"><td>product_type</td>
+<td>int</td>
+<td>物品类型(1:游票, 2:游米, 3:礼物)</td>
+</tr>
+<tr class="row-odd"><td>credit_type</td>
+<td>int</td>
+<td>价格类型(1:游票价格, 2:游米价格, 3:每日免费次数)</td>
+</tr>
+<tr class="row-even"><td>credit_value</td>
+<td>int</td>
+<td>价格数值</td>
+</tr>
+<tr class="row-odd"><td>on_sale</td>
+<td>bool</td>
+<td>是否在售</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="launchads">
+<h4>开屏广告（LaunchAds）:<a class="headerlink" href="#launchads" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="19%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ad_id</td>
+<td>string</td>
+<td>广告ID</td>
+</tr>
+<tr class="row-odd"><td>image</td>
+<td>url</td>
+<td>广告图片</td>
+</tr>
+<tr class="row-even"><td>duration</td>
+<td>int</td>
+<td>显示时间(秒)</td>
+</tr>
+<tr class="row-odd"><td>action</td>
+<td>string</td>
+<td>跳转链接</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="store">
+<h4>商店（Store）:<a class="headerlink" href="#store" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="21%" />
+<col width="51%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>store_id</td>
+<td>int</td>
+<td>商店ID</td>
+</tr>
+<tr class="row-odd"><td>title</td>
+<td>string</td>
+<td>商店描述</td>
+</tr>
+<tr class="row-even"><td>credit_type</td>
+<td>int</td>
+<td>价格类型(1:游票价格, 2:游米价格)</td>
+</tr>
+<tr class="row-odd"><td>credit_value</td>
+<td>int</td>
+<td>价格数值</td>
+</tr>
+<tr class="row-even"><td>status</td>
+<td>int</td>
+<td>状态(1:进行中, 2:暂停, 3:结束)</td>
+</tr>
+<tr class="row-odd"><td>action</td>
+<td>string</td>
+<td>跳转链接</td>
+</tr>
+<tr class="row-even"><td>share_url</td>
+<td>url</td>
+<td>分享链接</td>
+</tr>
+<tr class="row-odd"><td>share_image</td>
+<td>url</td>
+<td>分享图片</td>
+</tr>
+<tr class="row-even"><td>share_title</td>
+<td>string</td>
+<td>分享标题</td>
+</tr>
+<tr class="row-odd"><td>expire_at</td>
+<td>timestamp</td>
+<td>结束日期</td>
+</tr>
+<tr class="row-even"><td>items</td>
+<td>&lt;Item&gt;list</td>
+<td>商品列表</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="item">
+<h4>商品（Item）:<a class="headerlink" href="#item" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="15%" />
+<col width="54%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>item_id</td>
+<td>int</td>
+<td>商品ID</td>
+</tr>
+<tr class="row-odd"><td>left_num</td>
+<td>int</td>
+<td>剩余库存(份)</td>
+</tr>
+<tr class="row-even"><td>product</td>
+<td>Product</td>
+<td>物品</td>
+</tr>
+<tr class="row-odd"><td>product_num</td>
+<td>int</td>
+<td>物品数量</td>
+</tr>
+<tr class="row-even"><td>title</td>
+<td>string</td>
+<td>商品描述</td>
+</tr>
+<tr class="row-odd"><td>credit_type</td>
+<td>int</td>
+<td>价格类型(1:游票价格, 2:游米价格)</td>
+</tr>
+<tr class="row-even"><td>credit_value</td>
+<td>int</td>
+<td>价格数值</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="order">
+<h4>用户订单（Order）:<a class="headerlink" href="#order" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="15%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>order_id</td>
+<td>int</td>
+<td>订单ID</td>
+</tr>
+<tr class="row-odd"><td>title</td>
+<td>string</td>
+<td>商品描述</td>
+</tr>
+<tr class="row-even"><td>product</td>
+<td>Product</td>
+<td>物品</td>
+</tr>
+<tr class="row-odd"><td>status</td>
+<td>int</td>
+<td>状态(1:未领取, 2:处理中, 3:已完成)</td>
+</tr>
+<tr class="row-even"><td>create_at</td>
+<td>timestamp</td>
+<td>创建时间</td>
+</tr>
+<tr class="row-odd"><td>result</td>
+<td>dict</td>
+<td>营销平台返回结果</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="videocategory">
+<h4>视频分类（VideoCategory）:<a class="headerlink" href="#videocategory" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="19%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>category_id</td>
+<td>int</td>
+<td>分类ID</td>
+</tr>
+<tr class="row-odd"><td>category_name</td>
+<td>string</td>
+<td>分类名称</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="videotopic">
+<h4>视频专题（VideoTopic）:<a class="headerlink" href="#videotopic" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="19%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>topic_id</td>
+<td>string</td>
+<td>专题唯一标识</td>
+</tr>
+<tr class="row-odd"><td>topic_name</td>
+<td>string</td>
+<td>专题名称</td>
+</tr>
+<tr class="row-even"><td>topic_image</td>
+<td>string</td>
+<td>专题图片</td>
+</tr>
+<tr class="row-odd"><td>topic_desc</td>
+<td>string</td>
+<td>专题描述</td>
+</tr>
+<tr class="row-even"><td>share_title</td>
+<td>string</td>
+<td>专题分享标题</td>
+</tr>
+<tr class="row-odd"><td>share_desc</td>
+<td>string</td>
+<td>专题分享描述</td>
+</tr>
+<tr class="row-even"><td>topic_order</td>
+<td>string</td>
+<td>专题显示顺序</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="section" id="fixed_banner">
+<h4>固定Banner（FixedBanner）:<a class="headerlink" href="#fixed_banner" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>banner_id</td>
+<td>string</td>
+<td>Banner唯一标识</td>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+</tr>
+<tr class="row-even"><td>expire_at</td>
+<td>float</td>
+<td>到期时间</td>
+</tr>
+<tr class="row-odd"><td>image</td>
+<td>url</td>
+<td>banner图片</td>
+</tr>
+<tr class="row-even"><td>position</td>
+<td>int</td>
+<td>Banner所在位置，1：上方，2：下方</td>
+</tr>
+<tr class="row-odd"><td>action</td>
+<td>string</td>
+<td>跳转链接</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<div class="section" id="game_grids">
+<h4>游戏页宫格（GameGrid）:<a class="headerlink" href="#game_grids" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>宫格唯一标识</td>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+<td>宫格名称</td>
+</tr>
+<tr class="row-odd"><td>icon</td>
+<td>url</td>
+<td>宫格图片</td>
+</tr>
+<tr class="row-even"><td>order</td>
+<td>int</td>
+<td>显示顺序</td>
+</tr>
+<tr class="row-odd"><td>action</td>
+<td>string</td>
+<td>跳转链接</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="section" id="game_ads">
+<h4>游戏页广告（GameAds）:<a class="headerlink" href="#game_ads" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>banner_id</td>
+<td>string</td>
+<td>广告唯一标识</td>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+</tr>
+<tr class="row-even"><td>expire_at</td>
+<td>float</td>
+<td>到期时间</td>
+</tr>
+<tr class="row-odd"><td>image</td>
+<td>url</td>
+<td>广告图片</td>
+</tr>
+<tr class="row-even"><td>action</td>
+<td>string</td>
+<td>跳转链接</td>
+<tr class="row-odd"><td>duration</td>
+<td>int</td>
+<td>显示时长</td>
+</tr>
+<tr class="row-even"><td>order</td>
+<td>int</td>
+<td>显示顺序</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="section" id="game_topics">
+<h4>游戏页专题（GameTopic）:<a class="headerlink" href="#game_topics" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>游戏专题唯一标识</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td>string</td>
+<td>游戏专题标题</td>
+</tr>
+<tr class="row-even"><td>description</td>
+<td>string</td>
+<td>游戏专题描述</td>
+</tr>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+<tr class="row-even"><td>expire_at</td>
+<td>float</td>
+<td>到期时间</td>
+</tr>
+<tr class="row-odd"><td>big_icon</td>
+<td>url</td>
+<td>游戏专题大图标</td>
+</tr>
+<tr class="row-even"><td>icon</td>
+<td>url</td>
+<td>游戏专题小图标</td>
+</tr>
+<tr class="row-odd"><td>icon_type</td>
+<td>string</td>
+<td>游戏专题图标显示类型（big_icon：使用大图标, icon：使用小图标）</td>
+</tr>
+<tr class="row-even"><td>action</td>
+<td>string</td>
+<td>跳转链接</td>
+</tr>
+<tr class="row-odd"><td>order</td>
+<td>int</td>
+<td>显示顺序</td>
+</tr>
+<tr class="row-even"><td>release_day</td>
+<td>string</td>
+<td>显示发布日期</td>
+</tr>
+<tr class="row-odd"><td>visitor_count</td>
+<td>int</td>
+<td>浏览量</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="section" id="game_mainstays">
+<h4>主推游戏（GameMainstay）:<a class="headerlink" href="#game_mainstays" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>主推游戏唯一标识</td>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+<td>模块名称</td>
+</tr>
+<tr class="row-odd"><td>image</td>
+<td>url</td>
+<td>角标</td>
+</tr>
+<tr class="row-even"><td>order</td>
+<td>int</td>
+<td>显示顺序</td>
+</tr>
+<tr class="row-odd"><td>game</td>
+<td>&lt;Game&gt;</td>
+<td>游戏信息</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="section" id="game_module">
+<h4>游戏模块（GameModule）:<a class="headerlink" href="#game_module" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>游戏模块唯一标识</td>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+<td>模块名称</td>
+</tr>
+<tr class="row-odd"><td>icon</td>
+<td>url</td>
+<td>模块图标</td>
+</tr>
+<tr class="row-even"><td>order</td>
+<td>int</td>
+<td>显示顺序</td>
+</tr>
+<tr class="row-odd"><td>game</td>
+<td>&lt;Game&gt;</td>
+<td>游戏信息</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="section" id="watch_live_task">
+<h4>观看直播活动（WatchLiveTask）:<a class="headerlink" href="#watch_live_task" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>观看直播活动唯一标识</td>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+<td>活动名称</td>
+</tr>
+<tr class="row-odd"><td>duration</td>
+<td>int</td>
+<td>观看时长需求（单位：分钟）</td>
+</tr>
+<tr class="row-even"><td>expire_at</td>
+<td>float</td>
+<td>活动结束时间</td>
+</tr>
+<tr class="row-odd"><td>chance</td>
+<td>int</td>
+<td>剩余领取次数</td>
+</tr>
+<tr class="row-even"><td>icon_login</td>
+<td>url</td>
+<td>未登录状态按钮图标</td>
+</tr>
+<tr class="row-even"><td>icon</td>
+<td>url</td>
+<td>倒计时状态按钮图标</td>
+</tr>
+<tr class="row-even"><td>icon_break</td>
+<td>url</td>
+<td>直播中断按钮图标</td>
+</tr>
+<tr class="row-even"><td>icon_reward</td>
+<td>url</td>
+<td>领取状态按钮图标</td>
+</tr>
+<tr class="row-even"><td>icon_out</td>
+<td>url</td>
+<td>礼物领完按钮图标</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="section" id="watch_live_task_item">
+<h4>观看直播活动物品（WatchLiveTaskItem）:<a class="headerlink" href="#watch_live_task_item" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>观看直播活动物品唯一标识</td>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+</tr>
+<tr class="row-even"><td>wlt_id</td>
+<td>string</td>
+<td>观看直播活动ID</td>
+</tr>
+<tr class="row-odd"><td>product_id</td>
+<td>string</td>
+<td>商品ID</td>
+</tr>
+<tr class="row-even"><td>product_num</td>
+<td>int</td>
+<td>商品数量</td>
+</tr>
+<tr class="row-odd"><td>title</td>
+<td>string</td>
+<td>奖项名称</td>
+</tr>
+<tr class="row-even"><td>identity</td>
+<td>string</td>
+<td>营销商店奖项名称</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>string</td>
+<td>中奖描述</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="section" id="live_red_packet">
+<h4>直播间红包（RedPacket）:<a class="headerlink" href="#live_red_packet" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>红包唯一标识</td>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+</tr>
+<tr class="row-even"><td>chance</td>
+<td>int</td>
+<td>用户剩余领取红包次数</td>
+</tr>
+<tr class="row-odd"><td>expire_at</td>
+<td>float</td>
+<td>红包到期时间</td>
+</tr>
+<tr class="row-odd"><td>icon_login</td>
+<td>url</td>
+<td>未登录红包图片</td>
+</tr>
+<tr class="row-even"><td>icon_open</td>
+<td>url</td>
+<td>未打开红包图片</td>
+</tr>
+<tr class="row-odd"><td>icon_error</td>
+<td>url</td>
+<td>打开错误红包图片</td>
+</tr>
+<tr class="row-even"><td>icon_done</td>
+<td>url</td>
+<td>打开成功红包图片</td>
+</tr>
+<tr class="row-odd"><td>icon_button</td>
+<td>url</td>
+<td>红包按钮图片</td>
+</tr>
+<tr class="row-odd"><td>icon_button_open</td>
+<td>url</td>
+<td>红包按钮打开图片</td>
+</tr>
+<tr class="row-odd"><td>item_count</td>
+<td>int</td>
+<td>分享红包剩余领取物品数（次数）</td>
+</tr>
+<tr class="row-odd"><td>share_action</td>
+<td>url</td>
+<td>红包分享操作</td>
+</tr>
+<tr class="row-odd"><td>share_title</td>
+<td>string</td>
+<td>红包分享标题</td>
+</tr>
+<tr class="row-odd"><td>share_description</td>
+<td>string</td>
+<td>红包分享描述</td>
+</tr>
+<tr class="row-odd"><td>share_icon</td>
+<td>url</td>
+<td>红包分享图标</td>
+</tr>
+<tr class="row-odd"><td>total</td>
+<td>int</td>
+<td>用户待领取的红包数量（按次数计）</td>
+</tr>
+<tr class="row-odd"><td>watch</td>
+<td>int</td>
+<td>倒计时红包计时时长，单位秒</td>
+<tr class="row-odd"><td>icon_countdown</td>
+<td>url</td>
+<td>倒计时红包图标</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="section" id="live_red_packet_item">
+<h4>直播间红包物品（RedPacketItem）:<a class="headerlink" href="#live_red_packet_item" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>直播红包物品唯一标识</td>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+</tr>
+<tr class="row-even"><td>lrp_id</td>
+<td>string</td>
+<td>直播红包ID</td>
+</tr>
+<tr class="row-odd"><td>product_id</td>
+<td>string</td>
+<td>商品ID</td>
+</tr>
+<tr class="row-even"><td>product_num</td>
+<td>int</td>
+<td>商品数量</td>
+</tr>
+<tr class="row-odd"><td>title</td>
+<td>string</td>
+<td>奖项名称</td>
+</tr>
+<tr class="row-even"><td>identity</td>
+<td>string</td>
+<td>营销商店奖项名称</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>string</td>
+<td>中奖描述</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="section" id="activity_live_master">
+<h4>主播招募活动主播信息（ActivityLiveMaster）:<a class="headerlink" href="#activity_live_master" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>主播招募活动主播唯一标识（未返回）</td>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+<tr class="row-even"><td>duration</td>
+<td>float</td>
+<td>参与活动期间累计直播时长（单位：秒）</td>
+</tr>
+<tr class="row-odd"><td>content</td>
+<td>string</td>
+<td>主播宣言</td>
+</tr>
+<tr class="row-even"><td>author</td>
+<td>&lt;User&gt;</td>
+<td>用户信息</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="section" id="share_activity_config">
+<h4>分享活动信息（ShareActivityConfig）:<a class="headerlink" href="#share_activity_config" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>分享活动唯一标识（未返回）</td>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+<tr class="row-even"><td>begin_at</td>
+<td>float</td>
+<td>活动开始时间</td>
+</tr>
+<tr class="row-odd"><td>end_at</td>
+<td>float</td>
+<td>活动结束时间</td>
+</tr>
+<tr class="row-even"><td>icon</td>
+<td>url</td>
+<td>活动图标</td>
+</tr>
+<tr class="row-odd"><td>title</td>
+<td>string</td>
+<td>活动标题</td>
+</tr>
+<tr class="row-even"><td>shared</td>
+<td>bool</td>
+<td>用户是否已参与分享活动</td>
+</tr>
+<tr class="row-odd"><td>share_video_topic</td>
+<td>string</td>
+<td>活动分享视频专题ID</td>
+</tr>
+<tr class="row-even"><td>share_url</td>
+<td>string</td>
+<td>活动分享URL</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<div class="section" id="toplists">
+<h4>游戏排行榜（TopList）:<a class="headerlink" href="#toplists" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>游戏排行唯一标识</td>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+<td>排行名称</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>string</td>
+<td>排行描述</td>
+</tr>
+<tr class="row-even"><td>banner</td>
+<td>url</td>
+<td>排行Banner</td>
+</tr>
+<tr class="row-odd"><td>action</td>
+<td>string</td>
+<td>Banner跳转链接</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<div class="section" id="chess_config">
+<h4>棋牌配置（ChessConfig）:<a class="headerlink" href="#chess_config" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>游戏棋牌唯一标识</td>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+<td>棋牌名称</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>string</td>
+<td>棋牌描述</td>
+</tr>
+<tr class="row-even"><td>banner</td>
+<td>url</td>
+<td>棋牌Banner</td>
+</tr>
+<tr class="row-odd"><td>action</td>
+<td>string</td>
+<td>Banner跳转链接</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<div class="section" id="vip_config">
+<h4>会员专区配置（VipConfig）:<a class="headerlink" href="#vip_config" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>会员专区唯一标识</td>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+<td>会员专区名称</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>string</td>
+<td>会员专区描述</td>
+</tr>
+<tr class="row-even"><td>banner</td>
+<td>url</td>
+<td>会员专区Banner</td>
+</tr>
+<tr class="row-odd"><td>action</td>
+<td>string</td>
+<td>Banner跳转链接</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<div class="section" id="es_info">
+<h4>电竞资讯（EsInformation）:<a class="headerlink" href="#es_info" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>电竞资讯唯一标识</td>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+</tr>
+<tr class="row-even"><td>title</td>
+<td>string</td>
+<td>标题</td>
+</tr>
+<tr class="row-odd"><td>covers</td>
+<td>list</td>
+<td>封面图片列表</td>
+</tr>
+<tr class="row-even"><td>order</td>
+<td>int</td>
+<td>显示顺序</td>
+</tr>
+<tr class="row-odd"><td>content</td>
+<td>string</td>
+<td>资讯内容</td>
+</tr>
+<tr class="row-even"><td>author</td>
+<td>string</td>
+<td>资讯作者</td>
+</tr>
+<tr class="row-odd"><td>action</td>
+<td>url</td>
+<td>跳转地址</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<div class="section" id="show">
+<h4>栏目（Show）:<a class="headerlink" href="#show" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>栏目唯一标识</td>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+<td>栏目名称</td>
+</tr>
+<tr class="row-odd"><td>icon</td>
+<td>url</td>
+<td>栏目图标</td>
+</tr>
+<tr class="row-even"><td>description</td>
+<td>string</td>
+<td>栏目描述</td>
+</tr>
+<tr class="row-odd"><td>subscribed</td>
+<td>bool</td>
+<td>是否已订阅</td>
+</tr>
+<tr class="row-even"><td>subscription_count</td>
+<td>int</td>
+<td>订阅人数</td>
+</tr>
+<tr class="row-odd"><td>video_count</td>
+<td>int</td>
+<td>视频数量</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<div class="section" id="show_channel">
+<h4>栏目频道（ShowChannel）:<a class="headerlink" href="#show_channel" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>栏目频道唯一标识</td>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+<td>频道名称</td>
+</tr>
+<tr class="row-odd"><td>icon</td>
+<td>url</td>
+<td>频道图标</td>
+</tr>
+<tr class="row-even"><td>description</td>
+<td>string</td>
+<td>频道描述</td>
+</tr>
+<tr class="row-odd"><td>update_at</td>
+<td>float</td>
+<td>更新时间</td>
+</tr>
+<tr class="row-even"><td>vv</td>
+<td>int</td>
+<td>播放人数</td>
+</tr>
+<tr class="row-odd"><td>video_count</td>
+<td>int</td>
+<td>视频数量</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<div class="section" id="gift_code">
+<h4>会员礼包（GiftCode）:<a class="headerlink" href="#gift_code" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>栏目频道唯一标识</td>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+<td>礼包名称</td>
+</tr>
+<tr class="row-odd"><td>game</td>
+<td>&gt;Game&lt;</td>
+<td>礼包所属游戏</td>
+</tr>
+<tr class="row-even"><td>begin_at</td>
+<td>timestamp</td>
+<td>开始时间</td>
+</tr>
+<tr class="row-odd"><td>expire_at</td>
+<td>float</td>
+<td>结束时间</td>
+</tr>
+<tr class="row-even"><td>total</td>
+<td>int</td>
+<td>礼包总份数</td>
+</tr>
+<tr class="row-odd"><td>left</td>
+<td>int</td>
+<td>剩余礼包数量</td>
+</tr>
+<tr class="row-even"><td>received</td>
+<td>bool</td>
+<td>是否已领取礼包</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<div class="section" id="gift_code_order">
+<h4>会员礼包订单（GiftCodeOrder）:<a class="headerlink" href="#gift_code_order" title="永久链接至标题">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性名</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>order_id</td>
+<td>string</td>
+<td>会员礼包订单唯一标识</td>
+<tr class="row-odd"><td>create_at</td>
+<td>float</td>
+<td>创建时间</td>
+</tr>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+<td>礼包名称</td>
+</tr>
+<tr class="row-odd"><td>exchange_code</td>
+<td>string</td>
+<td>礼包兑换码</td>
+</tr>
+<tr class="row-even"><td>expire_at</td>
+<td>timestamp</td>
+<td>兑换码失效时间</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">內容目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">wanx.views package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-wanx.views">Module contents</a><ul>
+<li><a class="reference internal" href="#id1">接口中的对象属性定义</a><ul>
+<li><a class="reference internal" href="#user">用户（User）:</a></li>
+<li><a class="reference internal" href="#game">游戏（Game）:</a></li>
+<li><a class="reference internal" href="#video">视频（Video）:</a></li>
+<li><a class="reference internal" href="#comment">评论（Comment）:</a></li>
+<li><a class="reference internal" href="#message">点赞&amp;评论消息（Message）:</a></li>
+<li><a class="reference internal" href="#sysmessage">系统消息（SysMessage）:</a></li>
+<li><a class="reference internal" href="#letter">私信（Letter）:</a></li>
+<li><a class="reference internal" href="#reply">评论回复（Reply）:</a></li>
+<li><a class="reference internal" href="#product">物品（Product）:</a></li>
+<li><a class="reference internal" href="#goldlog">游米交易记录（GoldLog）:</a></li>
+<li><a class="reference internal" href="#gemlog">游票交易记录（GemLog）:</a></li>
+<li><a class="reference internal" href="#usertask">用户任务（UserTask）:</a></li>
+<li><a class="reference internal" href="#reward">任务奖励（Reward）:</a></li>
+<li><a class="reference internal" href="#gift">礼物（Gift）:</a></li>
+<li><a class="reference internal" href="#launchads">开屏广告（LaunchAds）:</a></li>
+<li><a class="reference internal" href="#store">商店（Store）:</a></li>
+<li><a class="reference internal" href="#item">商品（Item）:</a></li>
+<li><a class="reference internal" href="#order">用户订单（Order）:</a></li>
+<li><a class="reference internal" href="#videocategory">视频分类（VideoCategory）:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/wanx.views.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的术语，模块，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, yang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/wanx.views.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

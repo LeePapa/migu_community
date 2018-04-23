@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>wanx.views.msg module &mdash; wanx 1.1 文档</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="wanx 1.1 文档" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-wanx.views.msg">
+<span id="wanx-views-msg-module"></span><h1>wanx.views.msg module<a class="headerlink" href="#module-wanx.views.msg" title="永久链接至标题">¶</a></h1>
+<p><strong>点赞&amp;评论消息实现:</strong></p>
+<ol class="arabic simple">
+<li>服务端只保留增量的消息，也就是已经发送给客户端的消息服务端不再保留。</li>
+<li>客户端在获取/messages/home接口时，服务端会把用户的增量点赞&amp;评论消息发送给客户端。</li>
+<li>客户端处理完之后，需要调用/messages/delete接口通知服务端ts时间之前的消息可以删除了。</li>
+<li>用户查看点赞&amp;评论消息详情的时候客户端需要记录用户最后的阅读时间。</li>
+</ol>
+<p><strong>系统消息实现:</strong></p>
+<ol class="arabic simple">
+<li>服务端将会保留所有的历史系统消息。</li>
+<li>客户端在获取/messages/home接口时, 需要传送用户最后阅读的系统消息时间，
+服务端将会把这个时间之后的系统消息发送给客户端。</li>
+<li>用户查看系统消息详情的时候客户端需要记录用户最后的阅读时间。</li>
+</ol>
+<p><strong>私信消息实现:</strong></p>
+<ol class="arabic simple">
+<li>服务端只保留增量的消息，也就是已经发送给客户端的消息服务端不再保留。</li>
+<li>由于私信用户可能较多，客户端在获取/messages/home接口时, 服务端只会返回有新私信的用户的信息。
+这些信息只包括了新消息的条目、最后一条消息的内容。</li>
+<li>客户端通过调用/letters/detail接口来获取某个用户新私信的具体内容，户端需要记录用户最后的阅读时间</li>
+<li>客户端处理完之后，需要调用/letters/delete接口通知服务端ts时间之前的消息可以删除了。</li>
+</ol>
+<dl class="function">
+<dt id="wanx.views.msg.commit_suggestion">
+<code class="descclassname">wanx.views.msg.</code><code class="descname">commit_suggestion</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.msg.commit_suggestion" title="永久链接至目标">¶</a></dt>
+<dd><p>提交意见反馈(GET|POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/suggestion/commit</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>contact</strong> &#8211; 联系方式</li>
+<li><strong>content</strong> &#8211; 意见内容(不能为空)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;ret&#8217;: bool}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.msg.delete_user_letters">
+<code class="descclassname">wanx.views.msg.</code><code class="descname">delete_user_letters</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.msg.delete_user_letters" title="永久链接至目标">¶</a></dt>
+<dd><p>删除用户私信(GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/letters/delete</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>sender</strong> &#8211; 联系人ID</li>
+<li><strong>lrt</strong> &#8211; 私信最后阅读时间</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;delete_count&#8217;: int}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.msg.delete_user_msgs">
+<code class="descclassname">wanx.views.msg.</code><code class="descname">delete_user_msgs</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.msg.delete_user_msgs" title="永久链接至目标">¶</a></dt>
+<dd><p>删除点赞&amp;评论消息(GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/messages/delete</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>lrt</strong> &#8211; 点赞&amp;评论消息最后阅读时间</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;delete_count&#8217;: int}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.msg.send_user_letter">
+<code class="descclassname">wanx.views.msg.</code><code class="descname">send_user_letter</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.msg.send_user_letter" title="永久链接至目标">¶</a></dt>
+<dd><p>发送私信(GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/letters/send</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>receiver</strong> &#8211; 接收者ID</li>
+<li><strong>content</strong> &#8211; 发送内容</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;letter&#8217;: object}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.msg.user_letter_detail">
+<code class="descclassname">wanx.views.msg.</code><code class="descname">user_letter_detail</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.msg.user_letter_detail" title="永久链接至目标">¶</a></dt>
+<dd><p>获取私信详情(GET&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/letters/detail</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>sender</strong> &#8211; 联系人ID</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;letters&#8217;: list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.msg.user_msg_home">
+<code class="descclassname">wanx.views.msg.</code><code class="descname">user_msg_home</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.msg.user_msg_home" title="永久链接至目标">¶</a></dt>
+<dd><p>获取消息首页信息(GET|POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/messages/home</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>lrt</strong> &#8211; 系统消息最后阅读时间</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;msgs&#8217;: list, &#8216;sys_msgs&#8217;: list, &#8216;letters&#8217;: list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/wanx.views.msg.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的术语，模块，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, yang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/wanx.views.msg.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

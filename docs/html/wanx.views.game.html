@@ -1,0 +1,712 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>wanx.views.game module &mdash; wanx 1.1 文档</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="wanx 1.1 文档" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-wanx.views.game">
+<span id="wanx-views-game-module"></span><h1>wanx.views.game module<a class="headerlink" href="#module-wanx.views.game" title="永久链接至标题">¶</a></h1>
+<dl class="function">
+<dt id="wanx.views.game.category_games">
+<code class="descclassname">wanx.views.game.</code><code class="descname">category_games</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.category_games" title="永久链接至目标">¶</a></dt>
+<dd><p>获取分类下的所有游戏 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/tags/&lt;string:cid&gt;/games</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Uri migu:</th><td class="field-body">/migu/tags/&lt;string:cid&gt;/games/</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;games&#8217;: list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.channel_game">
+<code class="descclassname">wanx.views.game.</code><code class="descname">channel_game</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.channel_game" title="永久链接至目标">¶</a></dt>
+<dd><p>获取频道内容 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/channels/games</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">[{&#8216;tag_id&#8217;: string, &#8216;name&#8217;: string, &#8216;games&#8217;: list}, ...]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.game_download">
+<code class="descclassname">wanx.views.game.</code><code class="descname">game_download</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.game_download" title="永久链接至目标">¶</a></dt>
+<dd><p>获取游戏下载地址(GET|POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/&lt;string:gid&gt;/download</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;url&#8217;: url, &#8216;download_id&#8217;: string}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.game_download_finish">
+<code class="descclassname">wanx.views.game.</code><code class="descname">game_download_finish</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.game_download_finish" title="永久链接至目标">¶</a></dt>
+<dd><p>游戏下载完成(POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/&lt;string:download_id&gt;/finish_download</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.game_host">
+<code class="descclassname">wanx.views.game.</code><code class="descname">game_host</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.game_host" title="永久链接至目标">¶</a></dt>
+<dd><p>获取API的URL (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/host</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>game_id</strong> &#8211; 游戏id</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;host&#8217;: url, &#8216;live_host&#8217;: url, &#8216;under_test&#8217;: bool,
+&#8216;migu_app&#8217;: {&#8216;appid&#8217;: string, &#8216;secret&#8217;: string}}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.get_game">
+<code class="descclassname">wanx.views.game.</code><code class="descname">get_game</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.get_game" title="永久链接至目标">¶</a></dt>
+<dd><p>获取游戏详细信息 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/&lt;string:gid&gt;</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.online_games">
+<code class="descclassname">wanx.views.game.</code><code class="descname">online_games</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.online_games" title="永久链接至目标">¶</a></dt>
+<dd><p>获取所有在线游戏列表 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;games&#8217;: list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.recommend_subscribe_games">
+<code class="descclassname">wanx.views.game.</code><code class="descname">recommend_subscribe_games</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.recommend_subscribe_games" title="永久链接至目标">¶</a></dt>
+<dd><p>获取推荐订阅游戏 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/recommend/subscribe/games</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;games&#8217;: list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.sub_game">
+<code class="descclassname">wanx.views.game.</code><code class="descname">sub_game</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.sub_game" title="永久链接至目标">¶</a></dt>
+<dd><p>订阅游戏 (GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/user/opt/subscribe-game</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>game_id</strong> &#8211; 游戏id(批量订阅游戏id以逗号隔开)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.unsub_game">
+<code class="descclassname">wanx.views.game.</code><code class="descname">unsub_game</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.unsub_game" title="永久链接至目标">¶</a></dt>
+<dd><p>取消订阅游戏 (GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/user/opt/unsubscribe-game</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>game_id</strong> &#8211; 游戏id</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.user_sub_games">
+<code class="descclassname">wanx.views.game.</code><code class="descname">user_sub_games</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.user_sub_games" title="永久链接至目标">¶</a></dt>
+<dd><p>获取用户已订阅游戏 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/users/&lt;string:uid&gt;/games</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 最后时间, 0代表当前时间, 无此参数按page来分页</li>
+<li><strong>page</strong> &#8211; 页码(数据可能有重复, 建议按照maxs分页)</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;games&#8217;: list, &#8216;end_page&#8217;: bool, &#8216;maxs&#8217;: timestamp}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.online_web_games">
+<code class="descclassname">wanx.views.game.</code><code class="descname">online_web_games</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.online_web_games" title="永久链接至目标">¶</a></dt>
+<dd><p>获取所有在线页游列表 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/webgames</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>os</strong> &#8211; 平台 android, ios</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;games&#8217;: &lt;WebGame&gt;list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+
+<dl class="function">
+<dt id="wanx.views.game.game_home">
+<code class="descclassname">wanx.views.game.</code><code class="descname">game_home</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.game_home" title="永久链接至目标">¶</a></dt>
+<dd><p>获取游戏页首页信息 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/home</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>os</strong> &#8211; 平台 android, ios</li>
+<li><strong>version_code</strong> &#8211; 版本号</li>
+<li><strong>channels</strong> &#8211; 渠道（可选）</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;grids&#8217;: &lt;GameGrid&gt;list,
+    &#8216;ads&#8217;: &lt;GameAds&gt;list,
+    &#8216;mainstays&#8217;: &lt;GameMainstay&gt;list,
+    &#8216;hot_games&#8217;: &lt;Game&gt;list,
+    &#8216;modules&#8217;: &lt;GameModule&gt;list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+
+<dl class="function">
+<dt id="wanx.views.game.all_game_grids">
+<code class="descclassname">wanx.views.game.</code><code class="descname">all_game_grids</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.all_game_grids" title="永久链接至目标">¶</a></dt>
+<dd><p>获取游戏页所有宫格列表 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/grids</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>os</strong> &#8211; 平台 android, ios</li>
+<li><strong>version_code</strong> &#8211; 版本号</li>
+<li><strong>channels</strong> &#8211; 渠道（可选）</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;grids&#8217;: &lt;GameGrid&gt;list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.game_ads">
+<code class="descclassname">wanx.views.game.</code><code class="descname">game_ads</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.game_ads" title="永久链接至目标">¶</a></dt>
+<dd><p>获取游戏页广告列表 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/ads</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>os</strong> &#8211; 平台 android, ios</li>
+<li><strong>version_code</strong> &#8211; 版本号</li>
+<li><strong>channels</strong> &#8211; 渠道（可选）</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;ads&#8217;: &lt;GameAds&gt;list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.game_topics">
+<code class="descclassname">wanx.views.game.</code><code class="descname">game_topics</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.game_topics" title="永久链接至目标">¶</a></dt>
+<dd><p>获取游戏页专题列表 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/topics</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>os</strong> &#8211; 平台 android, ios</li>
+<li><strong>version_code</strong> &#8211; 版本号</li>
+<li><strong>channels</strong> &#8211; 渠道（可选）</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;topics&#8217;: &lt;GameTopic&gt;list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.topic_games">
+<code class="descclassname">wanx.views.game.</code><code class="descname">topic_games</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.topic_games" title="永久链接至目标">¶</a></dt>
+<dd><p>获取专题游戏列表 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/topic_games</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>topic_id</strong> &#8211; 专题ID</li>
+<li><strong>maxs</strong> &#8211; 最后显示顺序, 0代表初始顺序, 无此参数按page来分页</li>
+<li><strong>page</strong> &#8211; 页码(数据可能有重复, 建议按照maxs分页)</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;games&#8217;: &lt;Game&gt;list, &#8216;topic&#8217;: &lt;GameTopic&gt;, &#8216;end_page&#8217;: bool, &#8216;maxs&#8217;: int}</p>
+</td>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.webgame_ads">
+<code class="descclassname">wanx.views.game.</code><code class="descname">webgame_ads</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.webgame_ads" title="永久链接至目标">¶</a></dt>
+<dd><p>获取页游广告列表 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/webgames/ads</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>os</strong> &#8211; 平台 android, ios</li>
+<li><strong>version_code</strong> &#8211; 版本号</li>
+<li><strong>channels</strong> &#8211; 渠道（可选）</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;ads&#8217;: &lt;GameAds&gt;list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.game_mainstays">
+<code class="descclassname">wanx.views.game.</code><code class="descname">game_mainstays</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.game_mainstays" title="永久链接至目标">¶</a></dt>
+<dd><p>获取主推游戏列表 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/mainstays</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>os</strong> &#8211; 平台 android, ios</li>
+<li><strong>version_code</strong> &#8211; 版本号</li>
+<li><strong>channels</strong> &#8211; 渠道（可选）</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;mainstays&#8217;: &lt;GameMainstay&gt;list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.game_modules">
+<code class="descclassname">wanx.views.game.</code><code class="descname">game_modules</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.game_modules" title="永久链接至目标">¶</a></dt>
+<dd><p>获取游戏模块列表 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/mainstays</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>os</strong> &#8211; 平台 android, ios</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;modules&#8217;: &lt;GameModule&gt;list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.hot_games">
+<code class="descclassname">wanx.views.game.</code><code class="descname">hot_games</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.hot_games" title="永久链接至目标">¶</a></dt>
+<dd><p>获取游戏页所有热门游戏列表 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/hot_games</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;games&#8217;: &lt;Game&gt;list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.game_poplists">
+<code class="descclassname">wanx.views.game.</code><code class="descname">game_poplists</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.game_poplists" title="永久链接至目标">¶</a></dt>
+<dd><p>获取所有游戏排行 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/toplists</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>os</strong> &#8211; 平台 android, ios</li>
+<li><strong>channels</strong> &#8211; 渠道号【可选】</li>
+<li><strong>version_code</strong> &#8211; 版本号</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;toplists&#8217;: &lt;TopList&gt;list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.toplist_games">
+<code class="descclassname">wanx.views.game.</code><code class="descname">toplist_games</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.toplist_games" title="永久链接至目标">¶</a></dt>
+<dd><p>获取排行游戏 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/toplist_games</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>toplist_id</strong> &#8211; 排行榜ID</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;games&#8217;: &lt;Game&gt;list, &#8216;toplist&#8217;: &lt;TopList&gt;list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.game_chess_configs">
+<code class="descclassname">wanx.views.game.</code><code class="descname">game_chess_configs</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.game_chess_configs" title="永久链接至目标">¶</a></dt>
+<dd><p>获取所有棋牌分类 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/chess_configs</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>os</strong> &#8211; 平台 android, ios</li>
+<li><strong>channels</strong> &#8211; 渠道号【可选】</li>
+<li><strong>version_code</strong> &#8211; 版本号</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;chess_configs&#8217;: &lt;ChessConfig&gt;list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.chess_games">
+<code class="descclassname">wanx.views.game.</code><code class="descname">chess_games</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.chess_games" title="永久链接至目标">¶</a></dt>
+<dd><p>获取棋牌分类下的游戏 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/chess_games</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>chess_id</strong> &#8211; 棋牌分类ID</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;games&#8217;: &lt;Game&gt;list, &#8216;chess_config&#8217;: &lt;ChessConfig&gt;list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.vip_configs">
+<code class="descclassname">wanx.views.game.</code><code class="descname">vip_configs</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.vip_configs" title="永久链接至目标">¶</a></dt>
+<dd><p>获取所有会员专区 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/vip_configs</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>os</strong> &#8211; 平台 android, ios</li>
+<li><strong>channels</strong> &#8211; 渠道号【可选】</li>
+<li><strong>version_code</strong> &#8211; 版本号</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;vip_configs&#8217;: &lt;VipConfig&gt;list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function" style="text-decoration: line-through">
+<dt id="wanx.views.game.vip_games">
+<code class="descclassname">wanx.views.game.</code><code class="descname">vip_games</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.vip_games" title="永久链接至目标">¶</a></dt>
+<dd><p>获取会员专区下的游戏 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/vip_games</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>vip_id</strong> &#8211; 会员专区ID</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;games&#8217;: &lt;Game&gt;list, &#8216;vip_config&#8217;: &lt;VipConfig&gt;}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.vip_gift_codes">
+<code class="descclassname">wanx.views.game.</code><code class="descname">vip_gift_codes</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.vip_gift_codes" title="永久链接至目标">¶</a></dt>
+<dd><p>获取会员专区下的会员礼包 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/vip/giftcode/list</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>vip_id</strong> &#8211; 会员专区ID</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;gift_codes&#8217;: &lt;GiftCode&gt;list, &#8216;vip_config&#8217;: &lt;VipConfig&gt;}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.draw_gift_code">
+<code class="descclassname">wanx.views.game.</code><code class="descname">draw_gift_code</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.draw_gift_code" title="永久链接至目标">¶</a></dt>
+<dd><p>VIP用户获取礼包兑换码 (POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/vip/giftcode/draw</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>giftcode_id</strong> &#8211; 会员游戏礼包id</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;order&#8217;: &lt;GiftCodeOrder&gt;}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.game.user_giftcode_orders">
+<code class="descclassname">wanx.views.game.</code><code class="descname">user_giftcode_orders</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.game.user_giftcode_orders" title="永久链接至目标">¶</a></dt>
+<dd><p>用户获得游玩发放礼包兑换码的订单列表 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/games/vip/giftcode/orders</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>page</strong> &#8211; 页码</li>
+<li><strong>nbr</strong> &#8211; 每页长度</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;orders&#8217;: &lt;GiftCodeOrder&gt;list, &#8216;end_page&#8217;: bool}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/wanx.views.game.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的术语，模块，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, yang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/wanx.views.game.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

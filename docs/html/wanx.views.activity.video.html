@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>wanx.views.activity.video module &mdash; wanx 1.1 文档</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="wanx 1.1 文档" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-wanx.views.activity.video">
+<span id="wanx-views-activity-video-module"></span><h1>wanx.views.activity.video module<a class="headerlink" href="#module-wanx.views.activity.video" title="永久链接至标题">¶</a></h1>
+<dl class="function">
+<dt id="wanx.views.activity.video.activity_create_video">
+<code class="descclassname">wanx.views.activity.video.</code><code class="descname">activity_create_video</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.activity.video.activity_create_video" title="永久链接至目标">¶</a></dt>
+<dd><p>创建活动视频 (POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">activity/&lt;string:aid&gt;/new-video</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>video_id</strong> &#8211; 原始视频id</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.activity.video.activity_popular_videos">
+<code class="descclassname">wanx.views.activity.video.</code><code class="descname">activity_popular_videos</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.activity.video.activity_popular_videos" title="永久链接至目标">¶</a></dt>
+<dd><p>获取人气视频</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">activity/&lt;string:aid&gt;/popular/videos</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>page</strong> &#8211; 页码</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+<li><strong>device</strong> &#8211; 终端ID</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;activity_videos&#8217;: list, &#8216;end_page&#8217;: bool, &#8216;activity_config&#8217;: Object }</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.activity.video.activity_top">
+<code class="descclassname">wanx.views.activity.video.</code><code class="descname">activity_top</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.activity.video.activity_top" title="永久链接至目标">¶</a></dt>
+<dd><p>获取结束时获奖视频(手动)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">activity/&lt;string:aid&gt;/manual/top</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>page</strong> &#8211; </li>
+<li><strong>nbr</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;activity_videos&#8217;: list, &#8216;end_page&#8217;: bool}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.activity.video.activity_top_videos">
+<code class="descclassname">wanx.views.activity.video.</code><code class="descname">activity_top_videos</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.activity.video.activity_top_videos" title="永久链接至目标">¶</a></dt>
+<dd><p>获取结束时获奖视频</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">activity/&lt;string:aid&gt;/top/videos</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>page</strong> &#8211; 页码</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;activity_videos&#8217;: list, &#8216;end_page&#8217;: bool, &#8216;activity_config&#8217;: Object }</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.activity.video.activity_vote">
+<code class="descclassname">wanx.views.activity.video.</code><code class="descname">activity_vote</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.activity.video.activity_vote" title="永久链接至目标">¶</a></dt>
+<dd><p>活动投票</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">activity/vote</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>source</strong> &#8211; 投票来源(app_play, activity, activity_share, video_share)</li>
+<li><strong>device</strong> &#8211; 设备唯一ID</li>
+<li><strong>video_id</strong> &#8211; 视频ID</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;vote_count&#8217;: int}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.activity.video.compete_videos">
+<code class="descclassname">wanx.views.activity.video.</code><code class="descname">compete_videos</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.activity.video.compete_videos" title="永久链接至目标">¶</a></dt>
+<dd><p>获取可参赛视频(GET&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/activity/&lt;string:aid&gt;/compete_videos</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>page</strong> &#8211; 页数</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;videos&#8217;: list, &#8216;max_video&#8217;: int, &#8216;end_page&#8217;: bool}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.activity.video.delete_videos">
+<code class="descclassname">wanx.views.activity.video.</code><code class="descname">delete_videos</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.activity.video.delete_videos" title="永久链接至目标">¶</a></dt>
+<dd><p>删除我的参赛视频(POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">activity/&lt;string:aid&gt;/delete/videos</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>activity_video</strong> &#8211; 活动参赛视频id</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.activity.video.get_activity_video">
+<code class="descclassname">wanx.views.activity.video.</code><code class="descname">get_activity_video</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.activity.video.get_activity_video" title="永久链接至目标">¶</a></dt>
+<dd><p>获取参赛视频信息(GET&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">activity/video/&lt;string:vid&gt;</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>device</strong> &#8211; 终端ID</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;activity_video&#8217;: Object, &#8216;activity_config&#8217;: Object}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.activity.video.latest_video">
+<code class="descclassname">wanx.views.activity.video.</code><code class="descname">latest_video</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.activity.video.latest_video" title="永久链接至目标">¶</a></dt>
+<dd><p>获取最新参赛视频</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">activity/&lt;string:aid&gt;/video/current</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 最后时间, 0代表当前时间</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+<li><strong>device</strong> &#8211; 终端ID</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;activity_videos&#8217;: list, &#8216;end_page&#8217;: bool, &#8216;activity_config&#8217;: Object,
+&#8216;maxs&#8217;: timestamp}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.activity.video.user_videos">
+<code class="descclassname">wanx.views.activity.video.</code><code class="descname">user_videos</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.activity.video.user_videos" title="永久链接至目标">¶</a></dt>
+<dd><p>获取我的参赛视频(GET&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">activity/&lt;string:aid&gt;/videos</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>type</strong> &#8211; 活动结束时参数(type=end)</li>
+<li><strong>device</strong> &#8211; 终端ID</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;activity_videos&#8217;: list, &#8216;activity_config&#8217;: Object}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/wanx.views.activity.video.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的术语，模块，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, yang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/wanx.views.activity.video.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

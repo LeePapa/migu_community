@@ -1,0 +1,539 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+    <style>
+    iframe{width: 100%;}
+    table,th{text-align: center;}
+    table{border-left:1px solid #cfcfcf; border-top:1px solid #cfcfcf;}
+    th,td{border-right:1px solid #cfcfcf; border-bottom:1px solid #cfcfcf;min-width: 20px;}
+    th{height:40px; background: #ddddbb;}
+    td{height:35px;}
+    a{cursor: pointer; display: inline-block;}
+    .ttable{width: 100%;}
+    .sub_table{width: 95%; margin: 5px auto;}
+    .sub_table th{height: 35px; background: #ddceb9;}
+    .page_nave{width: 95%; margin: auto; text-align: left;}
+    .details{background: #ecf0f3;}
+    .icons{border:none; background: none;}
+    .filters{margin: 0 0 7px 5px;}
+    .filters button{margin-left:15px;}
+    .sub_filters{width: 95%;margin: 2px auto;}
+    .sub_filters button{float: left; margin:2px auto;}
+    input[type='text']{width: 200px;}
+    #popup_layer{position: absolute; left: 0px;right: 0px;top: 0px;bottom: 0px; background:#1b1b1b;filter:alpha(opacity=50);opacity:0.5;z-index: 0;}
+    #popup{display: none; position: absolute; left: 0px;right: 0px;top: 0px;bottom: 0px;}
+    .popup_inner{position: relative; background: white; width:600px;margin: 30px auto;z-index: 1;}
+    .popup_table{padding:10px;}
+    .ra{float: right;}
+    #report_id{margin: 10px; padding-top: 10px;}
+    .info{width: 90%; text-align: left; margin: auto;}
+    .info td{ padding-left: 5px;}
+    .info button{width:100px;}
+    .info input[type='number']{width: 50pt;}
+    .noborder, .noborder td{border:none;}
+    #user_popup{display: none; position: relative; background: white; width:600px;margin: 30px auto;z-index: 1;}
+    textarea{width: 590px; margin: auto; min-height:80px;}
+    </style>
+    <script>
+    var rtypes = ["","广告","色情低俗","政治敏感","人身攻击","盗用作品","其他"];
+    var rsources = ["视频", "直播"]
+    function show_detail(vid, title, auther, nbr){
+        var obj = $("#show_details_"+vid);
+        if (obj.html()=="展开"){
+            //展开明细
+            $("#"+vid).show();
+            $("#page_id_"+vid).val(1);
+            get_details(vid);
+        }
+        else{
+            //隐藏明细
+            $("#"+vid).hide();
+        }
+        obj.html(obj.html()=="展开"? "隐藏":"展开");
+    }
+
+    function get_details(vid){
+        var page = parseInt($("#page_id_"+vid).val());
+        var title = $("#video_title_"+vid).val();
+        var author = $("#video_author_"+vid).val();
+        var nbr = 10;
+        $.ajax({
+            type: 'GET',
+            url: '/admin/videoreport/details' ,
+            data: {"video_id":vid, "page":page, "nbr":nbr} ,
+            dataType:"json",
+            success: function (resp) {
+                var reports = resp.reports;
+                $("#container_"+vid).html("");
+                for(var i in reports){
+                    var trHtml = "<tr id=\''+reports[i]._id+'\'>" +
+                            "<td><input name='rchk_"+vid+"' type='checkbox' value='"+reports[i]._id+"'></td><td>" +
+                            '<button onclick="delete_confirm(\'report\', \''+vid+'\',[\''+reports[i]._id+'\']);" title="Delete Record" class="icons">'+
+                            '<span class="fa fa-trash glyphicon glyphicon-trash"></span></button>'+
+                            "</td><td>"+title+"</td>" +
+                            "<td>"+author+"</td>" +
+                            "<td>"+rtypes[reports[i].type]+"</td>" +
+                            "<td>"+reports[i].content+"</td>" +
+                            "<td>"+reports[i].create_at+"</td></tr>";
+                    $(trHtml).appendTo("#container_"+vid);
+                }
+                if(page == 1){
+                    $("#prev_"+vid).hide();
+                }
+                else{
+                    $("#prev_"+vid).show();
+                }
+                if(page == resp.total_page){
+                    $("#next_"+vid).hide();
+                }
+                else{
+                    $("#next_"+vid).show();
+                }
+                //显示页码
+                $("#pid_"+vid).html(page);
+                $("#pcnt_"+vid).html(resp.total_page);
+            }
+        });
+    }
+    
+    function prev_detail(vid) {
+        var page = parseInt($("#page_id_"+vid).val());
+        page = page>1?page-1:1
+        $("#page_id_"+vid).val(page);
+        get_details(vid);
+    }
+
+    function next_detail(vid) {
+        var page = parseInt($("#page_id_"+vid).val());
+        $("#page_id_"+vid).val(page+1);
+        get_details(vid);
+    }
+
+    function delete_confirm(mode, vid, rid){
+        var msg = mode=="video"?"你打算删除这条这个视频的所有被举报记录？":"你打算删除这条记录？";
+        var choice = confirm(msg);
+        if(!choice)return;
+        delete_report(mode, vid, rid);
+    }
+
+    function delete_report(mode, vid, rid){
+        ids = mode=="video"?vid:rid;
+        $.ajax({
+            type: 'POST',
+            url: '/admin/videoreport/delete/' ,
+            data: {"ids":ids, "mode":mode} ,
+            dataType:"json",
+            success: function (resp) {
+                if(resp.status != 0){
+                    alert(resp.errmsg);
+                    return
+                }
+                if(mode == "report"){
+                    if(parseInt($("#count_"+vid).html())<=ids.length+1){
+                        window.location.reload();
+                    }
+                    get_details(vid);
+                    $("#count_"+vid).html(parseInt($("#count_"+vid).html())-ids.length);
+                }
+                else{
+                    window.location.reload();
+                }
+            }
+        });
+    }
+
+    function check_videos(){
+        var is_checked = document.getElementById("vchk").checked;
+        var chks = document.getElementsByName("vchk");
+        for(i in chks){
+            chks[i].checked = is_checked;
+        }
+    }
+
+    function check_reports(vid){
+        var is_checked = document.getElementById("chk_rep_"+vid).checked;
+        var chks = document.getElementsByName("rchk_"+vid);
+        for(i in chks){
+            chks[i].checked = is_checked;
+        }
+    }
+
+    function filter_reports(){
+        var vid = $("#video_filter").val();
+        var uid = $("#user_filter").val();
+        var url = "/admin/videoreport";
+        if(vid){
+            url += "?vid="+vid;
+        }
+        location.href = url;
+    }
+
+    function delete_checked_videos(){
+        var vids = [];
+        $("input:checkbox[name='vchk']:checked").each(function () {
+            vids.push($(this).val());
+        });
+        if(vids.length == 0)return;
+        var choice = confirm("确实要删除所选的"+vids.length+"项视频的所有被举报消息？");
+        if(!choice)return;
+
+        delete_report("video", vids, "");
+    }
+
+    function delete_checked_reports(vid){
+        var rids = [];
+        $("input:checkbox[name='rchk_"+vid+"']:checked").each(function () {
+            rids.push($(this).val());
+        });
+        if(rids.length == 0)return;
+        var choice = confirm("确实要删除所选的"+rids.length+"项被举报消息？");
+        if(!choice)return;
+
+        delete_report("report", vid, rids);
+    }
+
+    function show_report_detail(rid){
+        get_report_info(rid);
+        $("#report_id").html(rid);
+        hide_bans();
+        $("#popup").show();
+    }
+
+    function get_report_info(rid){
+        $.ajax({
+            type: 'GET',
+            url: '/admin/videoreport/info/' ,
+            data: {"report_id": rid} ,
+            dataType:"json",
+            success: function (resp) {
+                console.log(resp);
+                if(resp.status != 0){
+                    alert(resp.errmsg);
+                    return
+                }
+                if(! resp.data){
+                    alert("视频或直播间不存在！");
+                    return
+                }
+                $("#video_link").html(resp.data.video_id);
+                $("#user_nickname").html(resp.data.video_author);
+                $("#report_reason").html(rtypes[resp.data.type]);
+                $("#report_description").html(resp.data.content);
+                $("#report_at").html(resp.data.create_at);
+                $("#report_source").html(rsources[resp.data.source]);
+                $("#user_id").val(resp.data.video_author_id);
+
+                $("#close_live").hide();
+                $("#delete_video").hide();
+                $("#delete_comment").hide();
+                $("#delete_reply").hide();
+                if(resp.data.source == 0){
+                    $("#delete_video").show();
+                    $("#delete_video_id").val(resp.data.video_id);
+                }
+                else if(resp.data.source == 1){
+                    $("#close_live").show();
+                }
+                else if(resp.data.source == 2){
+                    $("#delete_comment").show();
+                    $("#delete_comment_id").val(resp.data.video_id);
+                }
+                else if (resp.data.source == 3){
+                    $("#delete_reply").show();
+                    $("#delete_reply_id").val(resp.data.video_id);
+                }
+                if (resp.data.video_author_id){
+                    $("#ban_user").show();
+                }
+                else{
+                    $("#ban_user").hide();
+                }
+            },
+            error: function(XMLHttpRequest){
+                $("#video_link").html("");
+                $("#user_nickname").html("");
+                $("#report_reason").html("");
+                $("#report_description").html("");
+                $("#report_at").html("");
+                $("#report_source").html("");
+                $("#user_id").val("");
+
+                $("#close_live").hide();
+                $("#delete_video").hide();
+                $("#ban_user").hide();
+            }
+        });
+    }
+
+    function show_bans(){
+        $("#report_popup").hide();
+        $("#user_popup").show();
+    }
+
+    function hide_bans(){
+        $("#user_popup").hide();
+        $("#report_popup").show();
+    }
+
+    function save_bans(){
+        var user_id = $("#user_id").val();
+        var day_choice = $("input:radio[name='ban_time']:checked").val();
+        var ban_days = $("#ban_days").val();
+        //alert(day_choice);
+        var limits = [];
+        $("input:checkbox[name='limit']:checked").each(function(){
+            limits.push($(this).val());
+        });
+        //alert(limits);
+        if(limits.length == 0){
+            alert("至少要选择一项限制条件！");
+            return;
+        }
+        var reason = $("#ban_reason").val();
+        if(! reason){
+            alert("请输入封号理由！");
+            return;
+        }
+        //alert(reason);
+        var days = ["7天", "15天", "6个月", "永久"];
+        var days_text = "";
+        if(day_choice < 4){
+            days_text = days[day_choice];
+        }
+        else{
+            days_text = ban_days+"天";
+        }
+        var msg = "确定要对用户'"+$("#user_nickname").html()+"'实施"+days_text+"封禁?";
+        var stat = confirm(msg);
+        if(! stat)return;
+
+        $.ajax({
+            type: 'POST',
+            url: '/admin/videoreport/ban/' ,
+            data: {"user_id": user_id, "day_choice": day_choice, "ban_days": ban_days,
+                "limits": limits, "reason":reason} ,
+            dataType:"json",
+            success: function (resp) {
+                if(resp.status != 0){
+                    alert(resp.errmsg);
+                    return
+                }
+                alert("账户已被封禁！");
+            }
+        });
+    }
+    </script>
+    <div id="filters" class="filters">
+        <span>视频ID:</span>
+        <input type="text" id="video_filter" value="{{ filter_vid }}">
+        <button onclick="filter_reports();">过滤</button>
+        <button onclick="delete_checked_videos();" style="display: inline-block;">删除所选项</button>
+    </div>
+    <table  class="ttable">
+    <thead>
+    <th><input id="vchk" type="checkbox" onclick="check_videos();"></th>
+    <th></th>
+    <th>被举报内容</th>
+    <th>被举报用户</th>
+    <th>举报分类</th>
+    <th>举报内容</th>
+    <th>举报时间</th>
+    <th>视频被举报次数</th>
+    </thead>
+    {% for report in reports %}
+        <tr>
+        <td><input name="vchk" type="checkbox" value="{{ report.video_id }}"></td>
+        <td>
+            <button onclick="show_report_detail('{{ report._id }}');" title="查看详细" class="icons">
+                <span class="fa fa-eye glyphicon glyphicon-eye-open"></span>
+            </button>
+            <button onclick="delete_confirm('video',['{{ report.video_id }}'], '');" title="删除记录" class="icons">
+                <span class="fa fa-trash glyphicon glyphicon-trash"></span>
+            </button>
+        </td>
+        <td>
+            {% if report.source == 0  %}
+                <a href="/admin/videosview/?flt1_0={{ report.video_id }}">{{ report.video_title }}</a>
+            {% elif report.source == 2  %}
+                <a href="/admin/commentsview/?flt4_4={{ report.video_id }}">{{ report.video_title }}</a>
+            {% elif report.source == 3  %}
+                <a href="/admin/repliesview/?flt3_3={{ report.video_id }}">{{ report.video_title }}</a>
+            {% else %}
+                {{ report.video_title }}
+            {% endif %}
+        </td>
+        <td><a href="/admin/usersview/?flt1_0={{ report.video_author_id }}">{{ report.video_author }}</a></td>
+        <td>{{ rtypes[report.type] }}</td>
+        <td>{{ report.content }}</td>
+        <td>{{ report.create_at }}</td>
+        <td>
+            <span id="count_{{ report.video_id }}">{{ report.count }}</span>
+            {% if  report.count != 1 %}
+                <a id="show_details_{{ report.video_id }}" href="#" onclick="javascript:show_detail('{{ report.video_id }}', '{{ report.video_title }}', '{{ report.video_author }}', 10);">展开</a>
+            {% endif %}
+        </td>
+        </tr>
+        {% if  report.count != 1 %}
+            <tr id="{{ report.video_id }}" style="display:none;">
+            <td colspan="8" class="details">
+                <div>
+                    <div class="sub_filters">
+                        <button onclick="delete_checked_reports('{{ report.video_id }}');">删除所选项</button>
+                    </div>
+                    <table class="sub_table">
+                        <thead>
+                        <tr>
+                            <th><input id="chk_rep_{{ report.video_id }}" type="checkbox" onclick="check_reports('{{ report.video_id }}');"></th>
+                            <th>
+                                <input type="hidden" id="page_id_{{ report.video_id }}" value="1">
+                                <input type="hidden" id="video_title_{{ report.video_id }}" value="{{ report.video_title }}">
+                                <input type="hidden" id="video_author_{{ report.video_id }}" value="{{ report.video_author }}">
+                            </th>
+                            <th>被举报内容</th>
+                            <th>被举报用户</th>
+                            <th>举报分类</th>
+                            <th>举报内容</th>
+                            <th>举报时间</th>
+                        </tr>
+                        </thead>
+                        <tbody id="container_{{ report.video_id }}">
+                        </tbody>
+                    </table>
+                    <div class="page_nave">
+                        当前<span id="pid_{{ report.video_id }}">0</span>/<span id="pcnt_{{ report.video_id }}">0</span>页
+                        <a id="prev_{{ report.video_id }}" onclick="prev_detail('{{ report.video_id }}');"> 上页 </a>
+                        <a id="next_{{ report.video_id }}" onclick="next_detail('{{ report.video_id }}');"> 下页 </a>
+                    </div>
+                </div>
+            </td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+    </table>
+    <div>
+        当前{{ page }}/{{ total_page }}页
+        {% if page != 1 %}
+        <a href="/admin/videoreport?page={{ page-1 }}&nbr={{ nbr }}"> 上页 </a>
+        {% endif %}
+        {% if page != total_page %}
+        <a href="/admin/videoreport?page={{ page+1 }}&nbr={{ nbr }}"> 下页 </a>
+        {% endif %}
+    </div>
+
+    <div id="popup">
+        <div id="popup_layer">
+        </div>
+        <div id="report_popup" class="popup_inner">
+            <button onclick="$('#popup').hide();" class="icons ra">
+                <span aria-hidden="true">×</span>
+            </button>
+            <h3 id="report_id"></h3>
+            <div class="popup_table">
+                <table class="info">
+                    <tr>
+                        <td>举报链接</td>
+                        <td id="video_link"></td>
+                        <td>
+                            <button id="close_live">关闭直播间</button>
+                            <form method="POST" action="/admin/videosview/delete/">
+                                <input type="hidden" name="id" id="delete_video_id" value="">
+                                <input type="hidden" name="url" value="{{ url }}">
+                                <button id="delete_video" onclick="return confirm('你打算删除这个视频？')">删除视频</button>
+                            </form>
+                            <form method="POST" action="/admin/commentsview/delete/">
+                                <input type="hidden" name="id" id="delete_comment_id" value="">
+                                <input type="hidden" name="url" value="{{ url }}">
+                                <button id="delete_comment" onclick="return confirm('你打算删除这条评论？')">删除评论</button>
+                            </form>
+                            <form method="POST" action="/admin/repliesview/delete/">
+                                <input type="hidden" name="id" id="delete_reply_id" value="">
+                                <input type="hidden" name="url" value="{{ url }}">
+                                <button id="delete_reply" onclick="return confirm('你打算删除这条回复？')">删除回复</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>被举报用户</td>
+                        <td id="user_nickname"></td>
+                        <td>
+                            <input type="hidden" id="user_id">
+                            <button id="ban_user" onclick="show_bans();">封号</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>举报原因</td>
+                        <td id="report_reason"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>举报描述</td>
+                        <td id="report_description"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>举报时间</td>
+                        <td id="report_at"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>内容性质</td>
+                        <td id="report_source"></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="user_popup">
+            <table class="info noborder">
+                <tr>
+                    <td colspan="4">请选择封号时长：</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="ban_time" value="0" checked="checked">一周</td>
+                    <td><input type="radio" name="ban_time" value="1">15天</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="ban_time" value="2">半年</td>
+                    <td><input type="radio" name="ban_time" value="3">永久</td>
+                    <td colspan="2"><input type="radio" name="ban_time" value="4">自定义：<input type="number" id="ban_days" min="1" value="1"> 天</td>
+                </tr>
+                <tr><td></td></tr>
+                <tr>
+                    <td colspan="4">请选择限制条件（可多选）：</td>
+                </tr>
+                <tr>
+                    <td colspan="4"><input type="checkbox" name="limit" value="0">禁止开直播</td>
+                </tr>
+                <tr>
+                    <td colspan="4"><input type="checkbox" name="limit" value="1">禁止上传视频</td>
+                </tr>
+                <tr>
+                    <td colspan="4"><input type="checkbox" name="limit" value="2">禁止发评论/弹幕</td>
+                </tr>
+                <tr>
+                    <td colspan="4"><input type="checkbox" name="limit" value="3">禁止私信</td>
+                </tr>
+                <tr>
+                    <td colspan="4"><input type="checkbox" name="limit" value="4">禁止登录</td>
+                </tr>
+                <tr><td></td></tr>
+                <tr>
+                    <td colspan="4">请输入封号原因：</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <textarea id="ban_reason"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><button onclick="save_bans();">封禁</button></td>
+                    <td><button onclick="hide_bans();">关闭</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
+

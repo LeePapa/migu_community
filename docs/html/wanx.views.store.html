@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>wanx.views.store module &mdash; wanx 1.1 文档</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="wanx 1.1 文档" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-wanx.views.store">
+<span id="wanx-views-store-module"></span><h1>wanx.views.store module<a class="headerlink" href="#module-wanx.views.store" title="永久链接至标题">¶</a></h1>
+<dl class="function">
+<dt id="wanx.views.store.all_exchanges">
+<code class="descclassname">wanx.views.store.</code><code class="descname">all_exchanges</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.store.all_exchanges" title="永久链接至目标">¶</a></dt>
+<dd><p>获取兑换商品活动列表(GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/store/all_exchanges</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;stores&#8217;: &lt;Store&gt;list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.store.draw_lottery">
+<code class="descclassname">wanx.views.store.</code><code class="descname">draw_lottery</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.store.draw_lottery" title="永久链接至目标">¶</a></dt>
+<dd><p>抽奖接口(POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/store/draw_lottery</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>store_id</strong> &#8211; 抽奖活动ID</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;item&#8217;: &lt;Item&gt;object, &#8216;order&#8217;: &lt;Order&gt;object}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.store.exchange_product">
+<code class="descclassname">wanx.views.store.</code><code class="descname">exchange_product</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.store.exchange_product" title="永久链接至目标">¶</a></dt>
+<dd><p>兑换物品接口(POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/store/exchange_product</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>store_id</strong> &#8211; 兑换活动ID</li>
+<li><strong>item_id</strong> &#8211; 兑换物品ID</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;item&#8217;: &lt;Item&gt;object, &#8216;order&#8217;: &lt;Order&gt;object}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.store.gift_codes">
+<code class="descclassname">wanx.views.store.</code><code class="descname">gift_codes</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.store.gift_codes" title="永久链接至目标">¶</a></dt>
+<dd><p>获取礼包类物品的奖励信息(POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/store/gift_codes</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>store_id</strong> &#8211; 商店ID</li>
+<li><strong>rid</strong> &#8211; 抽奖奖项ID</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;codes&#8217;: &lt;code&gt;list}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.store.lotteries">
+<code class="descclassname">wanx.views.store.</code><code class="descname">lotteries</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.store.lotteries" title="永久链接至目标">¶</a></dt>
+<dd><p>获取抽奖活动列表(GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/store/all_lotteries</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;stores&#8217;: &lt;Store&gt;list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.store.lottery_info">
+<code class="descclassname">wanx.views.store.</code><code class="descname">lottery_info</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.store.lottery_info" title="永久链接至目标">¶</a></dt>
+<dd><p>获取抽奖活动详细信息(GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/store/lottery_info</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>store_id</strong> &#8211; 兑换活动ID</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;lottery&#8217;: &lt;Store&gt;object}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.store.receive_order">
+<code class="descclassname">wanx.views.store.</code><code class="descname">receive_order</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.store.receive_order" title="永久链接至目标">¶</a></dt>
+<dd><p>领取订单奖励(POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/store/receive_order</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>order_id</strong> &#8211; 订单ID</li>
+<li><strong>name</strong> &#8211; 真实名字 (实物物品)</li>
+<li><strong>id_card</strong> &#8211; 身份证 (实物物品)</li>
+<li><strong>address</strong> &#8211; 地址 (实物物品)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;order&#8217;: &lt;Order&gt;object}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.store.user_orders">
+<code class="descclassname">wanx.views.store.</code><code class="descname">user_orders</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.store.user_orders" title="永久链接至目标">¶</a></dt>
+<dd><p>获取用户活动订单信息(POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/store/user_orders</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>store_id</strong> &#8211; 商店ID</li>
+<li><strong>page</strong> &#8211; 页码</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;orders&#8217;: &lt;Order&gt;list, &#8216;end_page&#8217;: bool}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.store.barrage_color">
+<code class="descclassname">wanx.views.barrage_color.</code><code class="descname">barrage_color</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.store.user_orders" title="永久链接至目标">¶</a></dt>
+<dd><p>获取弹幕颜色信息(POST&GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/store/barrage_color</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{"colors" : [{
+            'color_id': color_id,</br>
+            'credit_type': credit_type,</br>
+            'credit_value': credit_value,</br>
+            'desc': desc
+        },{...}......]}</p></br>
+    colorid与desc对照关系   (1, '#EF2C2C'),(2, '#F2B000'),(3, '#1C73EB'),(4, '#26C42A'),(5, '#FF5994')</br>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.store.add_barrage_color">
+<code class="descclassname">wanx.views.add_barrage_color.</code><code class="descname">user_orders</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.store.user_orders" title="永久链接至目标">¶</a></dt>
+<dd><p>发送彩色弹幕(POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/store/< int:event_id >/add_barrage_color</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>color_id</strong> &#8211; 颜色id</li>
+    <li><strong>text</strong> &#8211; 弹幕内容</li>
+</ul>
+</td>
+</tr>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/wanx.views.store.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的术语，模块，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, yang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/wanx.views.store.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

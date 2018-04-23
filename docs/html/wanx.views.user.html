@@ -1,0 +1,847 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>wanx.views.user module &mdash; wanx 1.1 文档</title>
+
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="wanx 1.1 文档" href="index.html" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+
+  <div class="section" id="module-wanx.views.user">
+<span id="wanx-views-user-module"></span><h1>wanx.views.user module<a class="headerlink" href="#module-wanx.views.user" title="永久链接至标题">¶</a></h1>
+<dl class="function">
+<dt id="wanx.views.user.binding">
+<code class="descclassname">wanx.views.user.</code><code class="descname">binding</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.binding" title="永久链接至目标">¶</a></dt>
+<dd><p>用户绑定 (GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/users/binding</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>platform</strong> &#8211; 平台标识 (phone, weixin, qq)</li>
+<li><strong>openid</strong> &#8211; 平台id/手机号</li>
+<li><strong>token</strong> &#8211; 用户平台token/短信验证码</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.change_pwd">
+<code class="descclassname">wanx.views.user.</code><code class="descname">change_pwd</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.change_pwd" title="永久链接至目标">¶</a></dt>
+<dd><p>修改密码 (GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/users/&lt;string:uid&gt;/change-password</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>old_pwd</strong> &#8211; 旧密码</li>
+<li><strong>new_pwd</strong> &#8211; 新密码</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.contacts">
+<code class="descclassname">wanx.views.user.</code><code class="descname">contacts</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.contacts" title="永久链接至目标">¶</a></dt>
+<dd><p>获取用户的联系人 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/users/contacts</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;users&#8217;: list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.follow_user">
+<code class="descclassname">wanx.views.user.</code><code class="descname">follow_user</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.follow_user" title="永久链接至目标">¶</a></dt>
+<dd><p>关注用户 (GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/user/opt/follow-user</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>target_user_id</strong> &#8211; 被关注用户id</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.followers">
+<code class="descclassname">wanx.views.user.</code><code class="descname">followers</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.followers" title="永久链接至目标">¶</a></dt>
+<dd><p>获取用户粉丝 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/users/&lt;string:uid&gt;/followers</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 最后时间, 0代表当前时间, 无此参数按page来分页</li>
+<li><strong>page</strong> &#8211; 页码(数据可能有重复, 建议按照maxs分页)</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;users&#8217;: list}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.followings">
+<code class="descclassname">wanx.views.user.</code><code class="descname">followings</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.followings" title="永久链接至目标">¶</a></dt>
+<dd><p>获取用户的偶像 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/users/&lt;string:uid&gt;/followings</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 最后时间, 0代表当前时间, 无此参数按page来分页</li>
+<li><strong>page</strong> &#8211; 页码(数据可能有重复, 建议按照maxs分页)</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;users&#8217;: list}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.game_popular_users">
+<code class="descclassname">wanx.views.user.</code><code class="descname">game_popular_users</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.game_popular_users" title="永久链接至目标">¶</a></dt>
+<dd><p>获取游戏热门用户 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/games/&lt;string:gid&gt;/popularusers</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>page</strong> &#8211; 页码</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;users&#8217;: list, &#8216;end_page&#8217;: bool}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.get_user">
+<code class="descclassname">wanx.views.user.</code><code class="descname">get_user</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.get_user" title="永久链接至目标">¶</a></dt>
+<dd><p>获取用户详细信息 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/users/&lt;string:uid&gt;</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.login">
+<code class="descclassname">wanx.views.user.</code><code class="descname">login</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.login" title="永久链接至目标">¶</a></dt>
+<dd><p>用户登录 (GET|POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/users/login</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> &#8211; 用户名</li>
+<li><strong>password</strong> &#8211; 密码</li>
+<li><strong>type</strong> &#8211; 登陆类型(name, phone,)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;user&#8217;: object, &#8216;ut&#8217;: string}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.modify_info">
+<code class="descclassname">wanx.views.user.</code><code class="descname">modify_info</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.modify_info" title="永久链接至目标">¶</a></dt>
+<dd><p>修改用户信息 (GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/users/&lt;string:uid&gt;/modify-info</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>nickname</strong> &#8211; 昵称</li>
+<li><strong>phone</strong> &#8211; 手机</li>
+<li><strong>birthday</strong> &#8211; 生日</li>
+<li><strong>email</strong> &#8211; 邮箱</li>
+<li><strong>gender</strong> &#8211; 性别(1:男, 2:女)</li>
+<li><strong>signature</strong> &#8211; 签名</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;user&#8217;: object}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.partner_login">
+<code class="descclassname">wanx.views.user.</code><code class="descname">partner_login</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.partner_login" title="永久链接至目标">¶</a></dt>
+<dd><p>第三方平台token登录 (GET|POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/partner/users/login</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>platform</strong> &#8211; 平台标识{&#8216;csdk&#8217;:付费SDK, &#8216;weixin&#8217;:微信, &#8216;qq&#8217;:QQ, &#8216;migu&#8217;:咪咕}</li>
+<li><strong>token</strong> &#8211; 用户平台token | 咪咕密码</li>
+<li><strong>openid</strong> &#8211; 用户平台id | 咪咕手机号</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;user&#8217;: object, &#8216;ut&#8217;: string}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.platform_login">
+<code class="descclassname">wanx.views.user.</code><code class="descname">platform_login</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.platform_login" title="永久链接至目标">¶</a></dt>
+<dd><p>第三方平台token登录(https) (GET|POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/platform/users/login</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>platform</strong> &#8211; 平台标识{&#8216;csdk&#8217;:付费SDK, &#8216;weixin&#8217;:微信, &#8216;qq&#8217;:QQ, &#8216;migu&#8217;:咪咕}</li>
+<li><strong>token</strong> &#8211; 用户平台token | 咪咕token</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;user&#8217;: object, &#8216;ut&#8217;: string}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.recommend_users">
+<code class="descclassname">wanx.views.user.</code><code class="descname">recommend_users</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.recommend_users" title="永久链接至目标">¶</a></dt>
+<dd><p>获取推荐关注 (GET&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/recommend/users</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;users&#8217;: list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.refresh_token">
+<code class="descclassname">wanx.views.user.</code><code class="descname">refresh_token</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.refresh_token" title="永久链接至目标">¶</a></dt>
+<dd><p>刷新用户token时间 (GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/users/refresh_token</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;user&#8217;: Object}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.register">
+<code class="descclassname">wanx.views.user.</code><code class="descname">register</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.register" title="永久链接至目标">¶</a></dt>
+<dd><p>用户注册 (GET|POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/users/register</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> &#8211; 用户名</li>
+<li><strong>password</strong> &#8211; 密码</li>
+<li><strong>nickname</strong> &#8211; 昵称</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;user&#8217;: object, &#8216;ut&#8217;: string}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.register_phone">
+<code class="descclassname">wanx.views.user.</code><code class="descname">register_phone</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.register_phone" title="永久链接至目标">¶</a></dt>
+<dd><p>用户手机注册 (GET|POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/users/register_phone</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>phone</strong> &#8211; 手机号</li>
+<li><strong>password</strong> &#8211; 密码</li>
+<li><strong>nickname</strong> &#8211; 昵称</li>
+<li><strong>code</strong> &#8211; 短信验证码</li>
+<li><strong>gender</strong> &#8211; 性别(可选)(1:男, 2:女)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;user&#8217;: object, &#8216;ut&#8217;: string}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.reset_password">
+<code class="descclassname">wanx.views.user.</code><code class="descname">reset_password</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.reset_password" title="永久链接至目标">¶</a></dt>
+<dd><p>重置密码 (GET|POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/users/reset_password</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>phone</strong> &#8211; 手机号</li>
+<li><strong>password</strong> &#8211; 密码</li>
+<li><strong>code</strong> &#8211; 短信验证码</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.send_phone_code">
+<code class="descclassname">wanx.views.user.</code><code class="descname">send_phone_code</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.send_phone_code" title="永久链接至目标">¶</a></dt>
+<dd><p>发送短信验证码 (GET|POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/users/sms_code</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>phone</strong> &#8211; 手机号</li>
+<li><strong>action</strong> &#8211; 触发动作(可选)(注册:reg)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.share_video">
+<code class="descclassname">wanx.views.user.</code><code class="descname">share_video</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.share_video" title="永久链接至目标">¶</a></dt>
+<dd><p>分享视频 (POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/users/share</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>platform</strong> &#8211; 分享平台(moments, qzone, qq, weixin, other)</td>
+</tr>
+</tbody>
+</table>
+<p>:param target_type:分享数据类型(video, game, live, url)
+:param target_value: 分享数据值
+:returns: {}</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.unbinding">
+<code class="descclassname">wanx.views.user.</code><code class="descname">unbinding</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.unbinding" title="永久链接至目标">¶</a></dt>
+<dd><p>用户解绑定 (GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/users/binding</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>platform</strong> &#8211; 平台标识 (phone, weixin, qq)</li>
+<li><strong>openid</strong> &#8211; 平台id/手机号</li>
+<li><strong>token</strong> &#8211; 用户平台token/短信验证码</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.unfollow_user">
+<code class="descclassname">wanx.views.user.</code><code class="descname">unfollow_user</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.unfollow_user" title="永久链接至目标">¶</a></dt>
+<dd><p>取消关注用户 (GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/user/opt/unfollow-user</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>target_user_id</strong> &#8211; 被取消关注用户id</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.verify_nickname">
+<code class="descclassname">wanx.views.user.</code><code class="descname">verify_nickname</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.verify_nickname" title="永久链接至目标">¶</a></dt>
+<dd><p>验证昵称 (GET|POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/users/verify_nickname</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>nickname</strong> &#8211; 昵称</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.verify_phone">
+<code class="descclassname">wanx.views.user.</code><code class="descname">verify_phone</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.verify_phone" title="永久链接至目标">¶</a></dt>
+<dd><p>验证手机号 (GET|POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/users/verify_phone</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>phone</strong> &#8211; 手机号</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.verify_sms_code">
+<code class="descclassname">wanx.views.user.</code><code class="descname">verify_sms_code</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.verify_sms_code" title="永久链接至目标">¶</a></dt>
+<dd><p>验证短信验证码 (GET|POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/users/verify_sms_code</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>phone</strong> &#8211; 手机号</li>
+<li><strong>code</strong> &#8211; 验证码</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.user_live_history">
+<code class="descclassname">wanx.views.user.</code><code class="descname">user_live_history</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.user_live_history" title="永久链接至目标">¶</a></dt>
+<dd><p>用户直播时长历史记录 (GET&LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/users/live/history</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;logs&#8217;: [{&#8216;month&#8217;: [{&#8216;day&#8217;: Timestamp, &#8216;duration&#8217;: Int},...], &#8216;duration&#8217;: Int},...], &#8216;duration&#8217;: Int}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.reminding">
+<code class="descclassname">wanx.views.user.</code><code class="descname">reminding</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.reminding" title="永久链接至目标">¶</a></dt>
+<dd><p>获取用户的提醒 (GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/users/reminding</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 最后时间, 0代表当前时间, 无此参数按page来分页</li>
+<li><strong>page</strong> &#8211; 页码(数据可能有重复, 建议按照maxs分页)</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;users&#8217;: list}每个user对象增加了一个isreminded属性（布尔型），用来标识是否打开该用户提醒</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.changeremind">
+<code class="descclassname">wanx.views.user.</code><code class="descname">changeremind</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.changeremind" title="永久链接至目标">¶</a></dt>
+<dd><p>修改用户关注提醒状态 (GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/users/changeremind</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>reminder</strong> &#8211; 该用户所关注的用户id</li>
+<li><strong>status</strong> &#8211; 如果是打开提醒，传1，否则，不传该参数</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.getallreminding">
+<code class="descclassname">wanx.views.user.</code><code class="descname">getallreminding</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.getallreminding" title="永久链接至目标">¶</a></dt>
+<dd><p>获取该用户所有关注的主播，包括主播手机号和是否推送，用来给客户端设置jpush的标签 (GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/user/remindnums</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+无参数
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{'users': users}（user有phone和isreminded两个属性）</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.user.getallreminding">
+<code class="descclassname">wanx.views.user.</code><code class="descname">user_livejoin</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.getallreminding" title="永久链接至目标">¶</a></dt>
+<dd><p>用户进入直播间推送弹幕 (GET|POST&amp;LOGIN)</br>
+弹幕类型为userjoin</br>
+message内容是{
+    'event_id': 10085,
+    'message': 'nickname'
+}</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/lives/< int:event_id >/userjoin</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+无参数
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+
+<dl class="function">
+<dt id="wanx.views.user.certify">
+<code class="descclassname">wanx.views.user.</code><code class="descname">certify</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.certify" title="永久链接至目标">¶</a></dt>
+<dd><p>提交实名认证信息 (GET|POST&amp;LOGIN)</br>
+</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/users/certify</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:
+</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> &#8211; 用户名</li>
+<li><strong>user_id</strong> &#8211; 用户ID</li>
+<li><strong>ID_number</strong> &#8211; 身份证号码</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last"> {'uid': uid}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+
+<dl class="function">
+<dt id="wanx.views.user.certify_status">
+<code class="descclassname">wanx.views.user.</code><code class="descname">certify_status</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.certify_status" title="永久链接至目标">¶</a></dt>
+<dd><p>获取实名认证信息 (GET|POST&amp;LOGIN)</br>
+</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/users/certify_status</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:
+</th><td class="field-body"><ul class="first simple">
+<li><strong>ut</strong> &#8211; ut</li>
+
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last"> {}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+
+<dl class="function">
+<dt id="wanx.views.user.certify_status">
+<code class="descclassname">wanx.views.user.</code><code class="descname">certify_relieve</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.certify_relieve" title="永久链接至目标">¶</a></dt>
+<dd><p>解除实名认证 (GET|POST&amp;LOGIN)</br>
+</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/users/certify_relieve</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:
+</th><td class="field-body"><ul class="first simple">
+<li><strong>sms_code</strong> &#8211; 短信验证码</li>
+<li><strong>ID_number</strong> &#8211; 身份证号码</li>
+<li><strong>phone</strong> &#8211; 手机号码</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last"> {}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+
+<dl class="function">
+<dt id="wanx.views.user.certify_status">
+<code class="descclassname">wanx.views.user.</code><code class="descname">certify_sms_code</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.user.certify_sms_code" title="永久链接至目标">¶</a></dt>
+<dd><p>获取解除实名认证验证码 (GET|POST&amp;LOGIN)</br>
+</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/users/certify_sms_code</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:
+</th><td class="field-body"><ul class="first simple">
+<li><strong>phone</strong> &#8211; 手机号码</li>
+<li><strong>ut</strong> &#8211; ut</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last"> {}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/wanx.views.user.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的术语，模块，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, yang.
+
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+
+      |
+      <a href="_sources/wanx.views.user.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+
+
+
+  </body>
+</html>

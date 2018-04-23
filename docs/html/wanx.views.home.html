@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>wanx.views.home module &mdash; wanx 1.1 文档</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="wanx 1.1 文档" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-wanx.views.home">
+<span id="wanx-views-home-module"></span><h1>wanx.views.home module<a class="headerlink" href="#module-wanx.views.home" title="永久链接至标题">¶</a></h1>
+<dl class="function">
+<dt id="wanx.views.home.app_in_review">
+<code class="descclassname">wanx.views.home.</code><code class="descname">app_in_review</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.home.app_in_review" title="永久链接至目标">¶</a></dt>
+<dd><p>判断版本是否审核状态(GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/app_in_review</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>version</strong> &#8211; 版本号</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;in_review&#8217;: bool}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.home.banner">
+<code class="descclassname">wanx.views.home.</code><code class="descname">banner</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.home.banner" title="永久链接至目标">¶</a></dt>
+<dd><p>获取Banner信息 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/banners</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>os</strong> &#8211; 平台</li>
+<li><strong>channels</strong> &#8211; 渠道(可选)</li>
+<li><strong>version_code</strong> &#8211; 版本号</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;banners&#8217;: list}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.home.banner_sdk">
+<code class="descclassname">wanx.views.home.</code><code class="descname">banner_sdk</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.home.banner_sdk" title="永久链接至目标">¶</a></dt>
+<dd><p>获取SDK banner 信息(GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/banners/sdk</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;banners_sdk&#8217;: list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.home.check_service">
+<code class="descclassname">wanx.views.home.</code><code class="descname">check_service</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.home.check_service" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.home.daily_visit">
+<code class="descclassname">wanx.views.home.</code><code class="descname">daily_visit</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.home.daily_visit" title="永久链接至目标">¶</a></dt>
+<dd><p>每日访问信息（GET）</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/daily_visit</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>action</strong> &#8211; 动作(&#8216;active&#8217;:活跃, &#8216;awake&#8217;:唤醒)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.home.home">
+<code class="descclassname">wanx.views.home.</code><code class="descname">home</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.home.home" title="永久链接至目标">¶</a></dt>
+<dd><p>获取首页信息 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/home</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>os</strong> &#8211; 平台</li>
+<li><strong>channels</strong> &#8211; 渠道(可选)</li>
+<li><strong>version_code</strong> &#8211; 版本号</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;banners&#8217;: list, &#8216;categories&#8217;: list,
+&#8216;sub_games&#8217;: list, &#8216;hot_games&#8217;: list,
+&#8216;hot_lives&#8217;: list}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.home.is_mobile_phone">
+<code class="descclassname">wanx.views.home.</code><code class="descname">is_mobile_phone</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.home.is_mobile_phone" title="永久链接至目标">¶</a></dt>
+<dd><p>是否为移动手机号(GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/is_mobile_phone</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>phone</strong> &#8211; 手机号</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;ret&#8217;: bool}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.home.launch_ads">
+<code class="descclassname">wanx.views.home.</code><code class="descname">launch_ads</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.home.launch_ads" title="永久链接至目标">¶</a></dt>
+<dd><p>获取开屏广告</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/launch_ads</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;ad&#8217;: object}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.home.popup">
+<code class="descclassname">wanx.views.home.</code><code class="descname">popup</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.home.popup" title="永久链接至目标">¶</a></dt>
+<dd><p>弹窗
+:uri: /popup
+:param os: 平台
+:param channels: 渠道(可选)
+:return:{&#8216;popup&#8217;: list}</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.home.search">
+<code class="descclassname">wanx.views.home.</code><code class="descname">search</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.home.search" title="永久链接至目标">¶</a></dt>
+<dd><p>搜索 (GET|POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/search</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>type</strong> &#8211; 搜索类型{&#8216;all&#8217;:全部, &#8216;user&#8217;:用户, &#8216;game&#8217;:游戏, &#8216;video&#8217;:视频, &#8216;activity_video&#8217;:活动视频, &#8216;live_number&#8217;:直播间房号}</li>
+<li><strong>keyword</strong> &#8211; 关键字</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;user&#8217;:list, &#8216;game&#8217;:list, &#8216;video&#8217;:list, &#8216;lives&#8217;:[{'live': &lt;Xlive&gt;, 'user': &lt;User&gt;},...]}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.home.fixed_banner">
+<code class="descclassname">wanx.views.home.</code><code class="descname">fixed_banner</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.home.fixed_banner" title="永久链接至目标">¶</a></dt>
+<dd><p>获取固定Banner信息 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/fixed_banners</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>os</strong> &#8211; 平台</li>
+<li><strong>channels</strong> &#8211; 渠道(可选)</li>
+<li><strong>version_code</strong> &#8211; 版本号</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;banners&#8217;: &lt;FixedBanner&gt;list}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.home.bug_report">
+<code class="descclassname">wanx.views.home.</code><code class="descname">bug_report</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.home.bug_report" title="永久链接至目标">¶</a></dt>
+<dd><p>提交BUG报告 (POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/bug_report</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>err_type</strong> &#8211; 错误类型</li>
+<li><strong>exception</strong> &#8211; 异常类型</li>
+<li><strong>phone_model</strong> &#8211; 手机型号</li>
+<li><strong>os_version</strong> &#8211; 系统版本</li>
+<li><strong>phone_number</strong> &#8211; 手机号码</li>
+<li><strong>app_version</strong> &#8211; APP版本</li>
+<li><strong>err_msg</strong> &#8211; 错误信息</li>
+<li><strong>err_app</strong> &#8211; 发生APP</li>
+<li><strong>extention</strong> &#8211; 自定义信息（可选）</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;ret&#8217;: bool}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.home.get_request_id">
+<code class="descclassname">wanx.views.home.</code><code class="descname">get_request_id</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.home.get_request_id" title="永久链接至目标">¶</a></dt>
+<dd><p>获取请求id (GET|POST)</p>
+    <p>请求活动接口时参数中加入xmqid，xmqid由qid与约定id（66bddb70a6ec11e6a5ece2cda15bfe64）通过md5加密获得。</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/request_id</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;qid&#8217;: string}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/wanx.views.home.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的术语，模块，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, yang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/wanx.views.home.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>wanx.views.activity.live module &mdash; wanx 1.1 文档</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="wanx 1.1 文档" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-wanx.views.activity.live">
+<span id="wanx-views-activity-live-module"></span><h1>wanx.views.activity.live module<a class="headerlink" href="#module-wanx.views.activity.live" title="永久链接至标题">¶</a></h1>
+<dl class="function">
+<dt id="wanx.views.activity.live.checktest">
+<code class="descclassname">wanx.views.activity.live.</code><code class="descname">checktest</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.activity.live.checktest" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.activity.live.live_hot_user">
+<code class="descclassname">wanx.views.activity.live.</code><code class="descname">live_hot_user</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.activity.live.live_hot_user" title="永久链接至目标">¶</a></dt>
+<dd><p>获取热门主播</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">activity/live/hot_user/&lt;string:aid&gt;</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 分页标示, 0最新</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;hot_users&#8217;: list, &#8216;end_page&#8217;: bool,  &#8216;maxs&#8217;: long}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.activity.live.live_new_user">
+<code class="descclassname">wanx.views.activity.live.</code><code class="descname">live_new_user</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.activity.live.live_new_user" title="永久链接至目标">¶</a></dt>
+<dd><p>获取新秀主播</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">activity/live/new_user/&lt;string:aid&gt;</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 分页标示, 0最新</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;new_users&#8217;: list, &#8216;end_page&#8217;: bool,  &#8216;maxs&#8217;: long}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.activity.live.live_user_info">
+<code class="descclassname">wanx.views.activity.live.</code><code class="descname">live_user_info</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.activity.live.live_user_info" title="永久链接至目标">¶</a></dt>
+<dd><p>获取主播信息</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">activity/live/&lt;string:aid&gt;/user/info</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;user&#8217;: Object, &#8216;top&#8217;: int}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.activity.live.search">
+<code class="descclassname">wanx.views.activity.live.</code><code class="descname">search</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.activity.live.search" title="永久链接至目标">¶</a></dt>
+<dd><p>搜索 (GET|POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/activity/live/search/&lt;string:aid&gt;</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>type</strong> &#8211; 搜索类型{&#8216;user&#8217;:用户}</li>
+<li><strong>keyword</strong> &#8211; 关键字</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;user&#8217;:list}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.activity.live.check_user">
+<code class="descclassname">wanx.views.activity.live.</code><code class="descname">check_user</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.activity.live.check_user" title="永久链接至目标">¶</a></dt>
+<dd><p>主播招募活动用户报名信息检查 (POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/activity/live/recruit/check_user</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>activity_id</strong> &#8211; 活动ID</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{ &#8216;ret&#8217; : bool, &#8216;user&#8217;:&lt;ActivityLiveMaster&gt;}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.activity.live.join_in">
+<code class="descclassname">wanx.views.activity.live.</code><code class="descname">join_in</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.activity.live.join_in" title="永久链接至目标">¶</a></dt>
+<dd><p>主播招募活动报名 (POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/activity/live/recruit/join</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>activity_id</strong> &#8211; 活动ID</li>
+<li><strong>name</strong> &#8211; 姓名</li>
+<li><strong>gender</strong> &#8211; 性别</li>
+<li><strong>phone</strong> &#8211; 联系电话</li>
+<li><strong>identity</strong> &#8211; 身份证号码</li>
+<li><strong>content</strong> &#8211; 个人宣言</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{ &#8216;ret&#8217; : bool, &#8216;user&#8217;:&lt;ActivityLiveMaster&gt;}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.activity.live.live_latest_user">
+<code class="descclassname">wanx.views.activity.live.</code><code class="descname">live_latest_user</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.activity.live.live_latest_user" title="永久链接至目标">¶</a></dt>
+<dd><p>主播招募活动按最新报名时间排序的用户 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/activity/live/recruit/latest</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>activity_id</strong> &#8211; 活动ID</li>
+<li><strong>maxs</strong> &#8211; 播放时长（单位：秒）（float）【可选】</li>
+<li><strong>page</strong> &#8211; 分页ID【可选】【默认：1】</li>
+<li><strong>nbr</strong> &#8211; 每页条数【可选】【默认：10】</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{ &#8216;latest_users&#8217;:&lt;ActivityLiveMaster&gt;list, &#8216;end_page&#8217;: bool}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.activity.live.live_duration_user">
+<code class="descclassname">wanx.views.activity.live.</code><code class="descname">live_duration_user</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.activity.live.live_duration_user" title="永久链接至目标">¶</a></dt>
+<dd><p>主播招募活动按最高直播时长排序的用户 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/activity/live/recruit/duration</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>activity_id</strong> &#8211; 活动ID</li>
+<li><strong>maxs</strong> &#8211; 播放时长（单位：秒）（float）【可选】</li>
+<li><strong>page</strong> &#8211; 分页ID【可选】【默认：1】</li>
+<li><strong>nbr</strong> &#8211; 每页条数【可选】【默认：10】</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{ &#8216;duration_users&#8217;:&lt;ActivityLiveMaster&gt;list, &#8216;end_page&#8217;: bool}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/wanx.views.activity.live.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的术语，模块，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, yang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/wanx.views.activity.live.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

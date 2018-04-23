@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>wanx.views.gift module &mdash; wanx 1.1 文档</title>
+
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="wanx 1.1 文档" href="index.html" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+
+  <div class="section" id="module-wanx.views.gift">
+<span id="wanx-views-gift-module"></span><h1>wanx.views.gift module<a class="headerlink" href="#module-wanx.views.gift" title="永久链接至标题">¶</a></h1>
+<dl class="function">
+<dt id="wanx.views.gift.all_gifts">
+<code class="descclassname">wanx.views.gift.</code><code class="descname">all_gifts</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.gift.all_gifts" title="永久链接至目标">¶</a></dt>
+<dd><p>获取所有可赠送礼物 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/gifts/all_gifts</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;gifts&#8217;: list, &#8216;available_num&#8217;: list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.gift.gift_top_users">
+<code class="descclassname">wanx.views.gift.</code><code class="descname">gift_top_users</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.gift.gift_top_users" title="永久链接至目标">¶</a></dt>
+<dd><p>获取赠送主播礼物用户排行 (GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/gifts/top_users</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>user_id</strong> &#8211; 主播ID</li>
+<li><strong>page</strong> &#8211; 页码</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;users: list, &#8216;end_page&#8217;: bool}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.gift.send_gift">
+<code class="descclassname">wanx.views.gift.</code><code class="descname">send_gift</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.gift.send_gift" title="永久链接至目标">¶</a></dt>
+<dd><p>赠送礼物 (GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/gifts/send_gift</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
+<li><strong>user_id</strong> &#8211; 主播ID</li>
+<li><strong>gift_id</strong> &#8211; 礼物ID</li>
+<li><strong>num</strong> &#8211; 礼物数量</li>
+<li><strong>gift_from</strong> &#8211; 礼物来源(1:直播, 2:录播)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>:param from_id:来源ID(直播ID或者录播视频ID)
+:return: {&#8216;ret: bool}</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.gift.user_gifts">
+<code class="descclassname">wanx.views.gift.</code><code class="descname">user_gifts</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.gift.user_gifts" title="永久链接至目标">¶</a></dt>
+<dd><p>获取用户所有礼物 (GET&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/gifts/user_gifts</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;gifts&#8217;: list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.gift.gifts_history">
+<code class="descclassname">wanx.views.gift.</code><code class="descname">gifts_history</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.gift.gifts_history" title="永久链接至目标">¶</a></dt>
+<dd><p>查询礼物交易记录 (GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/gifts/log</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mode</strong> &#8211; 查询内容，1：送礼记录，2：收礼记录</li>
+<li><strong>page</strong> &#8211; 页码</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;logs&#8217;: [{'create_at': timestamp, 'product': &lt;Product&gt;, 'user': &lt;User&gt;, 'num': int}...] list, end_page: bool}</td>
+</tr>
+</tbody>
+</table>
+
+</dd></dl>
+
+
+<dl class="function">
+<dt id="wanx.views.gift.gifts_anchor">
+<code class="descclassname">wanx.views.gift.</code><code class="descname">gifts_anchor</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.gift.gifts_anchor" title="永久链接至目标">¶</a></dt>
+<dd><p>主播兑换信息 (GET&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/gifts/anchor</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ut</strong> &#8211;</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{
+    "exchange_value": 0,
+    "gift_value": 0,
+    "gifts_config": {
+      "break_rate": "0.8",
+      "exchange_begin": ,
+      "exchange_end": ,
+      "exchange_status": ,
+      "exchange_thresthold": "",
+      "total_exchange_value": ""
+    },
+    "is_anchor_wlist": false,
+    "is_exchange_time": true
+  } - exchange_value:折损后价格(int型)，<br>
+    gift_value:折损前礼物价格(float型)，<br>
+    break_rate:折损率(float型)，<br>
+    exchange_begin:兑换开始时间，<br>
+    exchange_end:兑换结束时间，<br>
+    exchange_status:在线状态(int型)，<br>
+    exchange_thresthold:兑换门槛(int型)，<br>
+    total_exchange_value:兑换总额(int型)，<br>
+    is_anchor_wlist:是否是签约主播，<br>
+    is_exchange_time:是否在兑换时间内<br>
+    </td>
+</tr>
+</tbody>
+</table>
+
+</dd></dl>
+
+
+<dl class="function">
+<dt id="wanx.views.gift.gifts_user_gifts_class">
+<code class="descclassname">wanx.views.gift.</code><code class="descname">gifts_user_gifts_class</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.gift.gifts_user_gifts_class" title="永久链接至目标">¶</a></dt>
+<dd><p>获取用户收到礼物 (GET&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/gifts/user_gifts_class</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
+<li><strong>requ_type</strong> &#8211;requ_type = 'get_gold_gifts': 获取游米礼物, requ_type = 'get_pay_gifts': 获取付费礼物
+
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{'gifts': [], 'total_credit_value': (礼物总价值), 'is_exchange_time':(是否在兑换时间内), 'gifts_config':(兑换配置)}
+    </td>
+</tr>
+</tbody>
+</table>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.gift.gifts_exchange1">
+<code class="descclassname">wanx.views.gift.</code><code class="descname">gifts_exchange</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.gift.gifts_exchange" title="永久链接至目标">¶</a></dt>
+<dd><p>兑换接口 (GET&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/gifts/exchange</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first last simple">
+<li><strong>requ_type</strong> &#8211;requ_type = 'get_judge'：检查兑换是否满足条件，requ_type = 'pay_exchange'：付费礼物兑换，requ_type = 'gold_exchange'：游米礼物兑换</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{'exchange_status': 1, 'exchange_msg': ''}  exchange_status: '1' - 是否是签约主播，
+exchange_status: '2' - 是否实名认证，exchange_status: '3' - 是否在兑换时间内，exchange_status: '4' - 是否超过总额度，exchange_status: '5' - 是否超过兑换次数，exchange_status: '0' - 兑换成功，exchange_status: '7' - 兑换失败</td>
+</tr>
+</tbody>
+</table>
+
+</dd></dl>
+
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/wanx.views.gift.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的术语，模块，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, yang.
+
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+
+      |
+      <a href="_sources/wanx.views.gift.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,58 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+<h2>使用流程</h2>
+<p>
+    <strong>文件上传：</strong>
+    <li>
+        选择需要上传文件的目录，点击【上传文件】, 文件上传成功后会提示后台所需要链接。
+    </li>
+    <li>
+        如果没有发现自己需要的目录，可以点击【创建目录】在当前目录下创建新目录。
+    </li>
+    <li>
+        在images, games, videos目录下上传文件时，文件名将会根据文件的md5值进行更改存储。
+    </li>
+    <li>
+        文件名和目录名不要带空格或者中文，最好用英文或者拼音。
+    </li>
+    </span>
+</p>
+<h2>模块介绍</h2>
+<p>
+    <strong>用户：</strong>
+    <span>用户的查看、增加、更改、删除</span>
+</p>
+<p>
+    <strong>游戏：</strong>
+    <span>游戏的查看、增加、更改、删除</span>
+</p>
+<p>
+    <strong>游戏分类：</strong>
+    <span>游戏分类的查看、增加、更改、删除</span>
+</p>
+<p>
+    <strong>游戏分类配置：</strong>
+    <span>将游戏配置到相应分类</span>
+</p>
+<p>
+    <strong>游戏推荐视频：</strong>
+    <span>为每个游戏配置推荐的视频，首页【订阅游戏】【热门游戏】模块中展示</span>
+</p>
+<p>
+    <strong>视频：</strong>
+    <span>视频的查看、增加、更改、删除</span>
+</p>
+<p>
+    <strong>首页广告：</strong>
+    <span>首页Banner广告的查看、增加、更改、删除</span>
+</p>
+<p>
+    <strong>首页配置：</strong>
+    <span>首页【每日精选】【热门游戏】的查看、增加、更改、删除</span>
+</p>
+<p>
+    <strong>文件上传：</strong>
+    <span>图片、视频等媒体文件上传</span>
+</p>
+{% endblock %}

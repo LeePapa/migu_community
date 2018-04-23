@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>咪咕游玩视频录制--{{ video.game_name }}</title>
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{static_url}}/css/reset.css" />
+       <!--组件依赖css begin-->
+    <link rel="stylesheet" type="text/css" href="{{static_url}}/css/transitions.css" />
+    <link rel="stylesheet" type="text/css" href="{{static_url}}/css/widget/tabs/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="{{static_url}}/css/widget/tabs/tabs.default.css" />
+    <!--组件依赖css end-->
+    <!--组件依赖js begin-->
+    <script type="text/javascript" src="{{static_url}}/js/zepto.js"></script>
+    <script type="text/javascript" src="{{static_url}}/js/touch.js"></script>
+    <script type="text/javascript" src="{{static_url}}/js/zepto.extend.js"></script>
+    <script type="text/javascript" src="{{static_url}}/js/zepto.ui.js"></script>
+    <script type="text/javascript" src="{{static_url}}/js/zepto.highlight.js"></script>
+    <script type="text/javascript" src="{{static_url}}/js/widget/tabs.js"></script>
+    <!--组件依赖js end-->
+<style type="text/css">
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figure, figcaption, hgroup, menu, footer, header, nav, section, summary, time, mark, audio, video { margin:0; padding:0; font-family:"STHeiti","Microsoft YaHei","Myriad Set Pro","Lucida Grande","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
+; border:0; }
+a:link{color: #fff;}
+a:visited{color: #fff;}
+a:hover{color: #fff;}
+a:active{color: #fff; }
+embed { width:100%; height:auto; }
+/*html {-ms-touch-action: manipulation;touch-action: manipulation;}/*延迟300秒click事件*/
+article, aside, canvas, figure,sub, figure img, figcaption, hgroup, footer, header, nav, section, audio, video { display:block }
+a, img { border:0 }
+dl, dt, dd, ul, ol, li { list-style:none }
+i, em { font-style:normal }
+html { -webkit-text-size-adjust:none; }
+* { -webkit-tap-highlight-color:rgba(0,0,0,0); -webkit-user-select:none; -webkit-touch-callout:none;  }
+input { -webkit-user-select:auto;-webkit-appearance:none; border-style:none; background-color:transparent;  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);  outline: none;}
+input[type="checkbox"]:focus,input[type="submit"]:focus,input[type="reset"]:focus, input[type="radio"]:focus { 
+outline: 1px solid #6FA1D9 !important; } 
+body {  color:#4C4C4C; background-color:#f1f1f1;}
+p { line-height:1.6 }
+.clearfix:after { display:block; content:''; clear:both; visibility:hidden }
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {   padding: 0;    margin: 0;}
+a{  text-decoration:none;}
+table {  border-spacing: 0;}
+fieldset,img {  border: 0;}
+address,caption,cite,code,dfn,em,strong,th,var {d  font-weight: normal;  font-style: normal;}
+strong{font-weight: bold;}
+ol,ul { list-style: none; margin:0; padding:0;}
+caption,th { text-align: left;}
+h1,h2,h3,h4,h5,h6 {  font-weight: normal; font-size: 100%;  margin:0;  padding:0;   color:#444;}
+q:before,q:after {   content:'';}
+abbr,acronym { border: 0;}
+
+
+/*bodyGo*/
+.share-page{ padding-bottom:60px;}
+.share-page .sp-header{}
+.share-page .sp-header a{}
+.share-page .sp-header img{ width:100%;}
+.game-h-info{ padding:10px; position:relative; background:#fff;}
+.game-h-info .game-icon{ position:absolute; top:10px; left:10px; width:40px; height:40px;}
+.game-h-info .game-icon img{ width:100%; height:100%; border-radius:50%;}
+.game-h-info  .more-video{ background:#5bc826;position:absolute; top:10px; right:10px;font-size:14px; color:#fff;font-size: 0.8rem;border-radius: 6px;padding: 10px 18px;}
+.game-h-info  .game-title{ padding:0 100px 0 50px;}
+.game-h-info  .game-title .v-num{ font-size:12px;}
+.game-h-info  .game-title .g-t{ color:#333333;  text-align:left; font-size:16px; white-space:nowrap; overflow:hidden; text-overflow: ellipsis;  }
+/*视频*/
+ .g-video-pic{
+background-repeat: no-repeat;
+  background-position: center;}
+.g-video-pic{background-color: #000;overflow: hidden;position: relative;padding: 37.5%;background-size: 100% auto;z-index: 100;}
+.g-video-pic  .v-play-time{ position:absolute; bottom:10px; left:10px; background:rgba(0,0,0,0.5); border-radius:6px; color:#fff; padding:4px 8px; font-size:12px; white-space:nowrap; max-width:90%; white-space:nowrap; text-overflow:ellipsis;  overflow:hidden;}
+.g-video-pic  .v-play-time .ganme-name{ display:block; padding-right:50px; white-space:nowrap; text-overflow:ellipsis;  overflow:hidden;}
+.g-video-pic  .v-play-time b{ color:#fd6800; font-weight:normal; display:inline-block; padding-left:10px; position:absolute; top:4px; right:10px;}
+.created{position:absolute;top:0;right:0px;height:45px;line-height:45px;vertical-align:middle;text-align:right;padding-right:8px;font-size:10px;color:#aaa;font-size:12px;}
+.g-l-s{background-color: rgb( 255, 255, 255 ); position:relative;  box-shadow: 0px 2px 2px 0px rgba( 0, 0, 0,0.1 ); padding:10px 10px 12px 10px;}
+.g-l-s span{ display:inline-block; color:#999999; font-size:12px;}
+.g-l-s .g-like-s{ background:url(http://static.molizhen.com/share/xinxing-icon.png) left center no-repeat; background-size:14px; padding-left:16px; margin-left:16px;}
+.g-l-s  .g-play-s{ background: url(http://static.molizhen.com/share/baofang-icon.png)  left center no-repeat; background-size:12px; padding-left:16px; }
+.zj-fl{ padding:10px 0 10px 10px;}
+.zj-fl h2{ padding:10px 0; font-size:12px; color:#7b868e;}
+.g-proList {}
+.g-proList li{ width:50%; float:left; margin:0 0% 10px 0; }
+.share_cont {border:rgba(0,0,0,0.2) solid 1px;padding:10px 0px 10px 10px; border-radius:2px; position:absolute; width:150px;background:#fff;right: 0px; top:30px; z-index:10; display:none;}
+.share_cont.show {  display:block;      }
+.share_cont li {  float:left; width:40px; height:40px; margin:10px 10px 0 0;   }
+.share_cont li a {  display:block;}
+.share_cont li img {width:100%;}
+.g-proList li .g-proCont{ padding:6px; margin-right:10px; box-shadow:0 0 1px rgba(0,0,0,0.2);background:#fff;}
+.g-proList li  .g-p-head{ position:relative; overflow:hidden;   background:no-repeat center center;background-size:100%;}
+.g-proList li  .g-p-head img{    }
+.g-proList li  .g-p-head .g-pro-btn{ position:absolute; width:40px; height:40px; top:50%; left:50%; margin-left:-20px; margin-top:-20px;}
+.g-proList li .play-time{position: absolute;bottom: 10px;right: 4px;background: rgba(0,0,0,0.5);border-radius: 4px;color: #fff;padding: 2px 10px;font-size: 0.8rem;}
+.g-proList li .g-video-tit{ position:relative; line-height:30px;}
+.g-proList li .g-video-tit .g-v-gamePic{ position: absolute; width:20px; height:20px; position:absolute; left:0; top:4px;}
+.g-proList li .g-video-tit .g-v-gamePic img{ border-radius:6px;}
+.g-proList li .g-video-tit h2{  padding:4px 4px 0 24px; line-height:18px;   overflow:hidden; height:38px;   font-size:12px; color:#666; text-align:left;}
+.g-proList li .g-video-tit .g-play-num{ position: absolute; display:inline-block; position:absolute;right:0; top:0px; background:url(http://static.molizhen.com/share/bf_small_btn.png) left center no-repeat;  background-size:10px; padding-left:14px; color:#333333; font-size:0.8rem;}
+.gg-download .gg-cont{ padding:0px 30px;}
+.gg-download{background: rgba(0,0,0,0.8); width:100%; position:fixed; bottom:0; left:0; z-index:99; height:54px;}
+.g-game-icon{ background:url(http://static20.molizhen.com/share/logo96.png) left center no-repeat; background-size:40px; padding:6px 20px 10px 46px; height:40px; font-size:16px; }
+.g-game-icon p{font-size:14px;}
+.g-game-icon span{ color:#fff;}
+.g-game-icon p{ color:#b3b3b3; position:relative; top:-2px;}
+.gl-tv{ color:#fd6800; font-weight:normal;}
+.lj-xz{ background:#fd6800; position:absolute; right:6px; top:10px; color:#fff; font-size:0.8rem; border-radius:6px;padding:10px 18px ;}
+
+.gg-download .close-btn{ background:url(http://static.molizhen.com/share/close-btn.png) no-repeat; background-size:26px; width:30px; height:30px; position:absolute; left:0; top:0; text-indent:-999em;}
+.footer-text{ font-size:0.8rem; color:#999999; text-align:center; padding:30px 0 20px 0;}
+/*视频遮罩*/
+#onplay {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(http://static.molizhen.com/btn_play_normal.png) center no-repeat;
+    background-size: 64px;
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    top: 0;}
+#video1{width:1px;height:1px;position: absolute;top: 0;left: 0;z-index: 2;background-color: #000;}
+/*作者*/
+.info{position:relative;height:45px;padding-bottom:8px;background:#eee;padding:5px 0 0 10px;}
+.info .name{margin:0px 100px 0px 50px;height:45px;line-height:45px;vertical-align:middle;}
+.info img{position:absolute;left:10px;top:4px;width:38px;height:38px;}
+.label{position:relative;overflow:visible;background:#E6E6E6 none;}
+.label img{position:absolute;top:-6px;left:23px;width:12px;height:6px;}
+.descript{padding:6px 12px;position:relative;font-size:16px;line-height:16px;display:none;}
+.more{background:url("http://static.molizhen.com/share/open.png") no-repeat center center;text-indent:-9000px;}
+.back{background:url("http://static.molizhen.com/share/close.png") no-repeat center center;text-indent:-9000px;}
+/*tab菜单*/
+.section{margin-top:15px;background:#fff;}
+/*游戏介绍*/
+.game_word{padding:0 10px 15px 10px;text-indent:30px;}
+/*推荐游戏*/
+.maybe_like{width:100%;}
+.mhd{height: 21px;line-height: 21px;position: relative;overflow: hidden;margin-bottom: 20px;}
+.mhd .hr{margin-top: 10px;background: #ddceb9;height: 1px;}
+.mhd span{display: block;position: absolute;width: 72px;height: 21px;top: 0;left: 50%;margin-left: -36px;background: #f8f7ea;color: #f60;font-size: 16px;text-align: center;}
+.mbd{width:100%;}
+.mbd ul{width:90%;margin:0 auto;}
+.mbd li{float:left;width:75px;height:103px;border-radius:50%;margin:10px;}
+.mbd li a{width:75px;height:75px;display:block;border-radius:10px;}
+.mbd li a span{overflow: hidden;padding-top:85px;display: block;height: 18px;line-height: 18px;white-space: nowrap;text-overflow: ellipsis;font-size: 12px;color: #8e6145;text-align: center;}
+/*评论样式*/
+    .content{width:100%;background:#fff;}
+    .sub_content{margin:0 auto;padding:5px 0 0 10px;position:relative;}
+    .content h2{padding:10px 5px;color:#FD6800;}
+    .sub_content{border-bottom:1px solid #ccc;}
+    .sub_content dt{float:left;}
+    .sub_content dt{width:38px;height:38px;}
+    .sub_content dt img{width:38px;height:38px;}
+    .sub_content dd{padding-left:50px;}
+    .name{font-size:14px;color:#666;line-height:30px;}
+    .good{font-size:10px;color:#999;line-height:10px;position:absolute;right:10px;top:10px;}
+    .good img{width:16px;height:16px;}
+    .time{font-size:10px;color:#999;line-height:20px;padding-top:5px;}
+    .word{color:#000;}
+/*推荐视频*/
+.sub_video{margin:0 auto;margin-bottom:15px;position:relative;background:#eee;width:95%;height:66px;box-shadow: 0 1px 4px rgba(0,0,0,.2);}
+.sub_video img{width:117px;height:66px;}
+.sub_video dd{position:absolute;top:10px;left:132px;right:10px;color:#555;font-size:14px;line-height:14px;}
+.sub_video .play_num{color:#909090;position:absolute;left:132px;top:40px;background:url("http://static.molizhen.com/share/baofang-icon.png") no-repeat;background-size: 12px;text-indent:20px;font-size:12px;line-height:13px;}
+#more_things{width:100%;height:30px;color:#000;display:block;text-align:center;padding-top:5px;}
+/*toolbar*/
+.toolbar{
+    width: 100%;
+    height: 40px;
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,1);
+    z-index: 2;
+}
+.play_btn{float: left;width: 40px;height: 40px;background: url('http://static.molizhen.com/share/btn_pause.png') no-repeat center center;background-size: 20px;display: inline-block;}
+.full_btn{float:right;width: 40px;background: url('http://static.molizhen.com/share/btn_full.png') no-repeat center center;background-size: 30px;height: 40px;display: inline-block;}
+.progress{float: left;width: 48.4375%;margin: 0 15px;}
+.pro_control{float: left;width: 100%;height: 4px;position: relative;margin: 18px 0;background: #ccc;border-radius: 10px;box-sizing: border-box;}
+.pro_control span{position: absolute;top: 0;left: 0;height: 100%;display: block;border-radius: 10px;}
+.currenttime, .duration {color: #fff;float: left;height: 100%;line-height: 40px;}
+.buffer{z-index: 5;background: #ccc;z-index: 10;background: #ff7319;}
+.time_bar{z-index: 10;background: #ff7319;}
+.round_bar{width: 20px;height: 20px;background: #fff;display: block;border-radius: 14px;position: absolute;z-index: 11;top: -8px;margin-left: -10px;}
+.loading{display: none;position: absolute;top: 0;left: 0;display: -webkit-box;display: box;visibility: hidden;-webkit-box-pack: center;-webkit-box-align: center;width: 100%;height: 100%;margin: 0 auto;z-index:3;}
+.loading span {
+display: inline-block;
+height: 30px;
+width: 2px;
+background-color: #fff;
+-webkit-animation: stretchdelay 1.8s infinite ease-in-out;
+}
+.loading .rect2 {-webkit-animation-delay: -1.7s; -webkit-animation: stretchdelay 1.7s infinite ease-in-out;
+  animation: stretchdelay 1.7s infinite ease-in-out;}
+.loading .rect3 {-webkit-animation-delay: -1.6s; -webkit-animation: stretchdelay 1.6s infinite ease-in-out;
+  animation: stretchdelay 1.6s infinite ease-in-out;}
+.loading .rect4 {-webkit-animation-delay: -1.5s;}
+.loading .rect5 {-webkit-animation-delay: -1.4s;}
+.loading .rect6 {-webkit-animation-delay: -1.3s;}
+.loading .rect7 {-webkit-animation-delay: -1.2s;}
+.loading .rect8 {-webkit-animation-delay: -1.1s;}
+.loading .rect9 {-webkit-animation-delay: -1s;}
+.loading .rect10 {-webkit-animation-delay: -0.9s;}
+.loading .rect11 {-webkit-animation-delay: -0.8s;}
+.loading .rect12 {-webkit-animation-delay: -0.7s;}
+@-webkit-keyframes stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+</style>
+<script language="javascript">
+function is_weixin(){
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function download_game() {
+    if (is_weixin()) {
+    show_weixin_download(true);
+    return;
+    }
+    window.location.href='{{ video.game_download_url }}'; 
+}
+
+function download_app() {
+    if (is_weixin()) {
+    show_weixin_download(true);
+    return;
+    }
+    app_url = "http://video.cmgame.com/userfiles/wapapp/mgyw.apk";
+    window.location.href = app_url;
+}
+
+function show_weixin_download(show) {
+    var wdb = document.getElementById("wixin_download_box");
+    var video1 = document.getElementById("video1");
+    if (wdb) {
+        if (!show) {
+            wdb.style.display="none";
+            video1.style.display = 'block';
+        }
+        else {
+            wdb.style.display="block";
+            video1.style.display = 'none';
+        }
+    }
+}
+</script>
+</head>
+<body>
+    <!-- 微信下载提示 -->
+    <div id="wixin_download_box" style="display:none;position:fixed;width:100%;height:100%;background:#000000;z-index:1000;overflow:hidden;filter: alpha(opacity=70);opacity:0.7;"
+    onclick="show_weixin_download(false);">
+        <img src="http://www.playsdk.com/images/weixin_download.png" style="position:absolute;right:0px"
+        onclick="show_weixin_download(false);">
+    </div>
+    <!--底部下载app-->
+    <div class="gg-download" id="gg-download">
+        <div class="gg-cont">
+            <span class="close-btn" id="close-btn"></span>
+            <div class="g-game-icon">
+                <span>咪咕游玩</span>
+                <p>惊喜多多的手游视频站</p>
+            </div>
+             <a href="javascript:void(0);" onclick="download_app();" class="lj-xz">立即下载</a>
+        </div>
+
+    </div>
+    <!--底部下载app结束-->
+    <div class="share-page" id="share-page">
+        {% if video.game_download_url %}
+        <div class="game-h-info">
+            <span class="game-icon">
+             <img src="{{ video.game_logo }}" />
+             </span>
+            <input type="button" class="more-video" value="下载游戏" onclick="download_game();">
+            <div class="game-title">
+                <h2 class="g-t">{{ video.game_name }}</h2>
+                <span class="v-num">总 {{ video.game_video_count }} 部视频</span>
+            </div>
+        </div>
+        {% endif %}
+        <div class="g-video-banner">
+            <div class="g-video-pic" id="g-video-pic" style="background-image:url({{ video.image_url }})">
+            <span id="onplay"></span>
+                <video id="video1" autobuffer controls="controls" poster="{{ video.image_url }}" src="{{ video.url }}"  webkit-playsinline>
+            </video>
+                <!--loading-->
+            <div class="loading">
+                            <!-- <span class="rect1"></span> -->
+                            <span class="rect2"></span>
+                            <span class="rect3"></span>
+                            <span class="rect4"></span>
+                            <span class="rect5"></span>
+                            <span class="rect6"></span>
+                            <span class="rect7"></span>
+                            <span class="rect8"></span>
+                            <span class="rect9"></span>
+                            <span class="rect10"></span>
+                            <span class="rect11"></span>
+                            <span class="rect12"></span>
+                </div>
+                <!--toolbar-->
+                <div class="toolbar">
+                            <a class="play_btn" title="play"></a>
+                            <a class="full_btn" title="fullScreen"></a>
+                            <span class="currenttime"></span>
+                            <div class="progress">
+                                <div class="pro_control">
+                                    <span class="buffer"></span>
+                                    <span class="time_bar"></span>
+                                    <i class="round_bar"></i>
+                                </div>
+                            </div>
+                            <span class="duration"></span>
+                </div><!--toolbar-->
+            </div>
+            <div class="g-l-s clearfix">
+                <span class="g-play-s">{{ video.vv }}</span>
+                <span class="g-like-s">{{ video.favour }}</span>
+                <div class="created">
+                    {{ video.created_time }}
+                </div>
+              </div>
+        </div>
+        <div class="info">
+                <div class="name">
+                    {{ video.nick_name }}
+                </div>
+                <img src="{{ video.user_logo }}">
+
+            </div>
+            <div class="label">
+                <img src="http://static.molizhen.com/share/icon-cap-top-round.png"/>
+                <div class="descript">
+                    <p>{{ video.title }}</p>
+                </div>
+                <a style='width:100%;height:20px;display:none;position:absolute;top:56px;color:#000;text-align:center;background-color:#E6E6E6;' class='more' href='javascript:;'>更多v</a>
+                <a style='width:100%;height:20px;display:none;color:#000;text-align:center;background-color:#E6E6E6;' class='back' href='javascript:;'>隐藏^</a>
+            </div>
+<!-- 代码 开始 -->
+<div class="section">
+    <div id="container">
+        <div id="tabs1">
+            <ul>
+                <li><a href="#conten1">游戏介绍</a></li>
+                <li class="ui-state-active"><a href="#conten2" >用户评论</a></li>
+                <li><a href="#conten3">推荐视频</a></li>    <!-- 如需要，可继续添加，href和id都需要修改。但不建议多加，手机屏幕上三个选项卡比较适中 -->
+            </ul>
+            <div id="conten1">
+            <p class="game_word">{{ video.game_description }}</p>
+            <!--<div class="maybe_like">
+                <div class="mhd">
+                    <p class="hr"></p>
+                    <span>推荐游戏</span>
+                </div>
+                <div class="mbd">
+                    <ul>
+                    <li>
+                        <a href="http://shouyou.aipai.com/app/5015" class="pic" style="background:url('http://static.molizhen.com/image/201502/3a/b0/3ab0d844414d479797da79b708f5a3f3.png') no-repeat center center;">
+                            <span>侠盗猎车手：圣安地列斯</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://shouyou.aipai.com/app/5015" class="pic" style="background:url('http://static.molizhen.com/image/201502/3a/b0/3ab0d844414d479797da79b708f5a3f3.png') no-repeat center center;">
+                            <span>侠盗猎车手：圣安地列斯</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://shouyou.aipai.com/app/5015" class="pic" style="background:url('http://static.molizhen.com/image/201502/3a/b0/3ab0d844414d479797da79b708f5a3f3.png') no-repeat center center;">
+                            <span>侠盗猎车手：圣安地列斯</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://shouyou.aipai.com/app/5015" class="pic" style="background:url('http://static.molizhen.com/image/201502/3a/b0/3ab0d844414d479797da79b708f5a3f3.png') no-repeat center center;">
+                            <span>侠盗猎车手：圣安地列斯</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://shouyou.aipai.com/app/5015" class="pic" style="background:url('http://static.molizhen.com/image/201502/3a/b0/3ab0d844414d479797da79b708f5a3f3.png') no-repeat center center;">
+                            <span>侠盗猎车手：圣安地列斯</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://shouyou.aipai.com/app/5015" class="pic" style="background:url('http://static.molizhen.com/image/201502/3a/b0/3ab0d844414d479797da79b708f5a3f3.png') no-repeat center center;">
+                            <span>侠盗猎车手：圣安地列斯</span>
+                        </a>
+                    </li>
+                    </ul>
+                    </div>
+                </div>-->
+            </div>
+            <div id="conten2">
+            {% if comments %}
+                {% for comment in comments %}
+                <dl class="sub_content">
+                    <dt>
+                    <img src="{{ comment.user_icon }}">
+                    </dt>
+                    <dd class="name">{{ comment.nick_name }}</dd>
+                    <dd class="good">
+                    <img src="http://static.molizhen.com/share/ic_praise.png"/>
+                    {{ comment.favour }}
+                    </dd>
+                    <dd class="word">{{ comment.content }}</dd>
+                    <dd class="time"> {{ comment.created_time }} </dd>
+                </dl>
+                {% endfor %}
+                <a href="javascript:void(0);" onclick="download_app();" id="more_things">更多评论</a>
+            {% else %}
+                <a href="javascript:void(0);" onclick="download_app();" id="more_things">暂时还没有评论，快来抢个沙发吧</a>
+            {% endif %}
+
+            </div>
+<!-- 代码 开始 -->
+<div class="section">
+            </div>
+            <div id="conten3">
+                {% if recommends %}
+                    {% for recommend in recommends %}
+                        {% if ywfrom %}
+                        <a href="{{ recommend.share_url }}?ywfrom={{ ywfrom }}">
+                        {% else %}
+                        <a href="{{ recommend.share_url }}">
+                        {% endif %}
+                        <dl class="sub_video">
+                            <dt>
+                            <img src="{{ recommend.image_url }}">
+                            </dt>
+                            <dd class="sub_title">{{ recommend.title }}</dd>
+                            <span class="play_num">{{ recommend.vv }}</span>
+                        </dl>
+                        </a>
+                    {% endfor %}
+                    <a href="javascript:void(0);" onclick="download_app();" id="more_things">更多视频</a>
+                {% else %}
+                    <a href="javascript:void(0);" onclick="download_app();" id="more_things">暂时还没有更多视频，要不你来传一个吧</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div> 
+<script>
+    $('#tabs1').tabs();
+   // $('#tabs1').on('beforeActivate', function(e){
+     //   $('#input1').prop('checked') && e.preventDefault();
+   // });
+</script>
+<!-- 代码 结束 -->
+        <div class="footer-text">
+            咪咕互动娱乐有限公司
+        </div>
+    </div>
+    <script src="{{static_url}}/js/jquery.min.js"></script>
+    <script src="{{static_url}}/js/zepto.js"></script>
+    <script type="text/javascript">
+ $(function () {
+            var i_w = $(".g-p-head").width();
+            var i_h = $(".g-p-head").width() * 0.56;
+            $(".g-p-head").css({ "height": i_h });
+        })
+$(window).load(function () {
+    var h_height = $("#h_img").height(),
+            sp_head = $("#sp-header"),
+            g_v_pic = $("#g-video-pic"),
+            g_share = $("#g-share"),
+            g_s_cont = $("#share_cont")
+    b_height = $("#g-video-pic img").height();
+
+    sp_head.height(h_height);
+    g_v_pic.height(b_height);
+    $(window).resize(function () {
+        sp_head.height(h_height);
+        g_v_pic.height(b_height);
+    });
+    var flg = 1;
+    g_share.click(function () {
+        if (flg == 1) {
+            flg = 2;
+            g_s_cont.show();
+        } else {
+            flg = 1;
+            g_s_cont.hide();
+        }
+    });
+    $("#close-btn").click(function () {
+        $("#gg-download").hide();
+        $("#share-page").css({ "padding-bottom": "0" });
+
+    })
+    //描述 点击展开
+    var h = $(".descript").height();
+    if(h>78){
+        $(".descript").css({"height":"44px","overflow":"hidden","display":"block"});
+        //$(".label").append("<a style='width:100%;height:20px;display:block;position:absolute;top:56px;color:#000;text-align:center;background-color:#E6E6E6;' class='more' href='javascript:;'>更多v</a>");
+        $(".label").css("height","76px");
+        $(".more").css("display","block");
+    }else{
+        $(".descript").css("display","block");
+    }
+            $(".more").click(function(){
+                $(".descript").css("height","100%");
+                $(".label").css("height","100%");
+                $(".more").css("display","none");
+                $(".back").css("display","block");
+            })
+            $(".back").click(function(){
+                $(".descript").css({"height":"44px","overflow":"hidden"});
+                $(".label").css("height","76px");
+                $(".more").css("display","block");
+                $(".back").css("display","none");
+            })
+//判断浏览器
+var browser={
+        versions:function(){
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {         //移动终端浏览器版本信息
+                     trident: u.indexOf('Trident') > -1, //IE内核
+                    presto: u.indexOf('Presto') > -1, //opera内核
+                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或uc浏览器
+                    iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+                    iPad: u.indexOf('iPad') > -1, //是否iPad
+                    webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+                };
+             }(),
+             language:(navigator.browserLanguage || navigator.language).toLowerCase()
+    }
+//  播放视频
+    $("#onplay").click(function(){
+        video.play();
+        video.play();
+        $("#g-video-pic").css("background-image","none");
+        $("#onplay").css("display","none");
+        $('#tabs1').switchTo(1)
+        //btn 40x2 time 40x2 margin 15x2
+        var progress_w =$(".toolbar").width()-190;
+        $(".progress").css("width",progress_w+'px');
+        $('.play_btn').css("background-image","url('http://static.molizhen.com/share/btn_pause.png')");
+        if(!is_weixn()){
+            if(browser.versions.android){
+                $(".toolbar").css("display","block");
+            }
+        }else{
+            $(".loading").css("visibility","visible");
+        }
+        $("#video1").css("width","100%");
+        $("#video1").css("height","100%");
+    })
+//播放视频
+    var video = document.getElementById("video1");
+    //Play/Pause control clicked
+    $('.play_btn').on('click', function() {
+       if(video.paused) {
+        $("#onplay").css("display","none");
+          video.play();
+          $('.play_btn').css("background-image","url('http://static.molizhen.com/share/btn_pause.png')")
+       }
+       else {
+          video.pause();
+          $('.play_btn').css("background-image","url('http://static.molizhen.com/share/btn_player.png')");
+          $("#onplay").css("display","block");
+       }
+       return false;
+    });
+//  get HTML5 video time duration
+    video.addEventListener('loadedmetadata', function() {
+        var sec = video.duration;
+        var t = vtime(sec);
+       $(".duration").text(t);
+    });
+    //update HTML5 video current play time
+    video.addEventListener('timeupdate', function() {
+       var currentPos = video.currentTime; //Get currenttime
+       var maxduration = video.duration; //Get video duration
+        if(video.currentTime>0){
+            $(".loading").css("visibility","hidden");
+            $("#video1").css("width","100%");
+            $("#video1").css("height","100%");
+        if(!is_weixn()){
+            if(browser.versions.android){
+                $(".toolbar").css("display","block");
+            }
+        }
+        }else{
+            $("#video1").get(0).play();
+            $("#video1").get(0).play();
+            $("#video1").get(0).play();
+        }
+       var percentage = 100 * currentPos / maxduration; //in %
+       $('.round_bar').css('left', percentage+'%');
+       $('.time_bar').css('width', percentage+'%');
+       //载入播放计时器
+       var t = vtime(currentPos);
+       $('.currenttime').text(t);
+       //载入播放总时长
+        var sec = video.duration;
+        var v = vtime(sec);
+       $(".duration").text(v);
+    });
+    var timeDrag = false;   /* Drag status */
+$('.progress').mousedown(function(e) {
+   timeDrag = true;
+   updatebar(e.pageX);
+});
+$(document).mouseup(function(e) {
+   if(timeDrag) {
+      timeDrag = false;
+      updatebar(e.pageX);
+   }
+});
+$(document).mousemove(function(e) {
+   if(timeDrag) {
+      updatebar(e.pageX);
+   }
+});
+    //update Progress Bar control
+    var updatebar = function(x) {
+       var progress = $('.progress');
+       var maxduration = video.duration; //Video duraiton
+       var position = x - progress.offset().left; //Click pos
+       var percentage = 100 * position / progress.width();
+     
+       //Check within range
+       if(percentage > 100) {
+          percentage = 100;
+       }
+       if(percentage < 0) {
+          percentage = 0;
+       }
+     
+       //Update progress bar and video currenttime
+       $('.time_bar').css('width', percentage+'%');
+       video.currentTime = maxduration * percentage / 100;
+    };  
+    $('.full_btn').on('click', function() {
+       //For Webkit
+       video.webkitEnterFullscreen();
+       //For Firefox
+       video.mozRequestFullScreen();
+       return false;
+    });
+    //格式化秒成分秒
+    function vtime(sec){
+        var min = parseInt(sec/60);
+        var second=parseInt(sec%60);
+        if(min<10){
+             min ='0'+min;
+        }
+        if(second<10){
+            second ='0'+second;
+        }
+        t = min+':'+second;
+        return t;
+    }
+    //判断是否为微信
+    function is_weixn(){
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i)=="micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+})  
+</script>
+
+    
+</body>
+</html>
+

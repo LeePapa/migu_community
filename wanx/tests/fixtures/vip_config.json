@@ -1,0 +1,18 @@
+[
+	{
+		"_id" : {"$oid" : "581956ed0a209317c0cf757a"},
+		"province" : [],
+		"version_code_mix" : 0,
+		"group" : {"$oid" : "578c63bd9f9363251c270ac2"},
+		"name" : "cesssss",
+		"os" : "android",
+		"create_at" : 1478055661.028,
+		"channels" : [],
+		"action" : "action.test",
+		"login" : "all",
+		"version_code_max" : 9999,
+		"banner" : "/images/474\\474acfb8b905f8cdd35c4a019702e3fc.jpg",
+		"order" : 0,
+		"desc" : "asdasdasdasd"
+	}
+]

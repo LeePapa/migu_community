@@ -1,0 +1,829 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>wanx.views.video module &mdash; wanx 1.1 文档</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="wanx 1.1 文档" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-wanx.views.video">
+<span id="wanx-views-video-module"></span><h1>wanx.views.video module<a class="headerlink" href="#module-wanx.views.video" title="永久链接至标题">¶</a></h1>
+<dl class="function">
+<dt id="wanx.views.video.category_videos">
+<code class="descclassname">wanx.views.video.</code><code class="descname">category_videos</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.category_videos" title="永久链接至目标">¶</a></dt>
+<dd><p>获取游戏下某个视频分类的所有视频(GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/videos/category_videos</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Param:</th><td class="field-body"><p class="first">category_id: 分类ID</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Param:</th><td class="field-body"><p class="first">game_id: 游戏ID</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 最后时间, 0代表当前时间, 无此参数按page来分页</li>
+<li><strong>page</strong> &#8211; 页码(数据可能有重复, 建议按照maxs分页)</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;videos&#8217;: &lt;Video&gt;list, &#8216;end_page&#8217;: bool, &#8216;maxs&#8217;: timestamp}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.create_video">
+<code class="descclassname">wanx.views.video.</code><code class="descname">create_video</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.create_video" title="永久链接至目标">¶</a></dt>
+<dd><p>创建视频 (POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/videos/new-video</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>game_id</strong> &#8211; 视频所属游戏id</li>
+<li><strong>title</strong> &#8211; 视频标题</li>
+<li><strong>duration</strong> &#8211; 视频时长</li>
+<li><strong>ratio</strong> &#8211; 视频尺寸</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.delete_video">
+<code class="descclassname">wanx.views.video.</code><code class="descname">delete_video</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.delete_video" title="永久链接至目标">¶</a></dt>
+<dd><p>删除视频 (POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/videos/&lt;string:vid&gt;/delete</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.elite_video">
+<code class="descclassname">wanx.views.video.</code><code class="descname">elite_video</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.elite_video" title="永久链接至目标">¶</a></dt>
+<dd><p>获取精选视频 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/videos/elite/</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 最后时间, 0代表当前时间, 无此参数按page来分页</li>
+<li><strong>page</strong> &#8211; 页码(数据可能有重复, 建议按照maxs分页)</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;videos&#8217;: list, &#8216;end_page&#8217;: bool, &#8216;maxs&#8217;: timestamp}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.favor_videos">
+<code class="descclassname">wanx.views.video.</code><code class="descname">favor_videos</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.favor_videos" title="永久链接至目标">¶</a></dt>
+<dd><p>获取用户收藏的视频 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/users/&lt;string:uid&gt;/favors</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 最后时间, 0代表当前时间, 无此参数按page来分页</li>
+<li><strong>page</strong> &#8211; 页码(数据可能有重复, 建议按照maxs分页)</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;videos&#8217;: list, &#8216;end_page&#8217;: bool, &#8216;maxs&#8217;: timestamp}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.favorite_video">
+<code class="descclassname">wanx.views.video.</code><code class="descname">favorite_video</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.favorite_video" title="永久链接至目标">¶</a></dt>
+<dd><p>收藏视频 (GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/user/opt/favorite-video</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>video_id</strong> &#8211; 被收藏视频id</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.game_live_videos">
+<code class="descclassname">wanx.views.video.</code><code class="descname">game_live_videos</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.game_live_videos" title="永久链接至目标">¶</a></dt>
+<dd><p>获取游戏的视频 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/games/&lt;string:gid&gt;/live_videos</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 最后时间, 0代表当前时间, 无此参数按page来分页</li>
+<li><strong>page</strong> &#8211; 页码(数据可能有重复, 建议按照maxs分页)</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;videos&#8217;: list, &#8216;end_page&#8217;: bool, &#8216;maxs&#8217;: timestamp}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.game_popular_videos">
+<code class="descclassname">wanx.views.video.</code><code class="descname">game_popular_videos</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.game_popular_videos" title="永久链接至目标">¶</a></dt>
+<dd><p>获取游戏人气视频 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/games/&lt;string:gid&gt;/videos</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>page</strong> &#8211; 页码</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;videos&#8217;: list, &#8216;end_page&#8217;: bool}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.game_videos">
+<code class="descclassname">wanx.views.video.</code><code class="descname">game_videos</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.game_videos" title="永久链接至目标">¶</a></dt>
+<dd><p>获取游戏的视频 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/games/&lt;string:gid&gt;/videos</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 最后时间, 0代表当前时间, 无此参数按page来分页</li>
+<li><strong>page</strong> &#8211; 页码(数据可能有重复, 建议按照maxs分页)</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+<li><strong>orderby</strong> &#8211; 排序方式 (&#8216;create_at&#8217;: 创建时间, &#8216;vv&#8217;:播放次数)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;videos&#8217;: list, &#8216;end_page&#8217;: bool, &#8216;maxs&#8217;: timestamp}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.get_share_video">
+<code class="descclassname">wanx.views.video.</code><code class="descname">get_share_video</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.get_share_video" title="永久链接至目标">¶</a></dt>
+<dd><p>获取视频分享数据(GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/share/video/&lt;string:vid&gt;</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;video&#8217;: object, &#8216;hot_videos&#8217;: list, &#8216;comments&#8217;: comments,
+&#8216;game_url&#8217;: url, &#8216;app_url&#8217;: url}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.get_video">
+<code class="descclassname">wanx.views.video.</code><code class="descname">get_video</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.get_video" title="永久链接至目标">¶</a></dt>
+<dd><p>获取视频详细信息 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/videos/&lt;string:vid&gt;</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Uri migu:</th><td class="field-body">/migu/videos/&lt;string:vid&gt;</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.get_video_id">
+<code class="descclassname">wanx.views.video.</code><code class="descname">get_video_id</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.get_video_id" title="永久链接至目标">¶</a></dt>
+<dd><p>通过直播间id获取视频(GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/videos/event_id</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Param:</th><td class="field-body">event_id: 直播间id</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;video&#8217;: Object}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.latest_video">
+<code class="descclassname">wanx.views.video.</code><code class="descname">latest_video</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.latest_video" title="永久链接至目标">¶</a></dt>
+<dd><p>获取最新视频 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/videos/current/</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 最后时间, 0代表当前时间, 无此参数按page来分页</li>
+<li><strong>page</strong> &#8211; 页码</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;videos&#8217;: list, &#8216;end_page&#8217;: bool, &#8216;maxs&#8217;: timestamp}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.video_list">
+<code class="descclassname">wanx.views.video.</code><code class="descname">video_list</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.video_list" title="永久链接至目标">¶</a></dt>
+<dd><p>按查询时间返回视频列表 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/videos/list/</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 需要查询的时间节点, 0代表从最旧的数据开始查询</li>
+<li><strong>nbr</strong> &#8211; 每页数量，默认20</li>
+<li><strong>token</strong> &#8211; 合作平台访问密钥</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;videos&#8217;: list, &#8216;end_page&#8217;: bool, &#8216;maxs&#8217;: timestamp}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.like_video">
+<code class="descclassname">wanx.views.video.</code><code class="descname">like_video</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.like_video" title="永久链接至目标">¶</a></dt>
+<dd><p>赞视频 (GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/user/opt/like-video</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>video_id</strong> &#8211; 被赞视频id</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.modify_video">
+<code class="descclassname">wanx.views.video.</code><code class="descname">modify_video</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.modify_video" title="永久链接至目标">¶</a></dt>
+<dd><p>更新视频信息接口 (POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/videos/&lt;string:vid&gt;/modify-video</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>title</strong> &#8211; 视频标题</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;video&#8217;: &lt;Video&gt;object}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.play_video">
+<code class="descclassname">wanx.views.video.</code><code class="descname">play_video</code><span class="sig-paren">(</span><em>vid</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.play_video" title="永久链接至目标">¶</a></dt>
+<dd><p>播放视频 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/videos/&lt;string:vid&gt;/play</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">redirect(real_url)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.report_video">
+<code class="descclassname">wanx.views.video.</code><code class="descname">report_video</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.report_video" title="永久链接至目标">¶</a></dt>
+<dd><p>举报视频 (POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/user/report-video</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>video_id</strong> &#8211; 被举报视频id</li>
+<li><strong>type</strong> &#8211; 举报原因</li>
+<li><strong>content</strong> &#8211; 举报内容</li>
+<li><strong>source</strong> &#8211; 举报来源，0：来自视频，1：来自直播</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.report">
+<code class="descclassname">wanx.views.video.</code><code class="descname">report</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.report" title="永久链接至目标">¶</a></dt>
+<dd><p>举报 (POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/user/report</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>target_id</strong> &#8211; 被举报对象id</li>
+<li><strong>type</strong> &#8211; 举报原因</li>
+<li><strong>content</strong> &#8211; 举报内容</li>
+<li><strong>source</strong> &#8211; 举报来源，0：来自视频，1：来自直播，2：来自评论，3：来自回复</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.check_report">
+<code class="descclassname">wanx.views.video.</code><code class="descname">check_report</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.check_report" title="永久链接至目标">¶</a></dt>
+<dd><p>检查用户是否已经举报过对象 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/user/report/check</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>target_id</strong> &#8211; 被举报对象id</li>
+<li><strong>source</strong> &#8211; 举报来源，0：来自视频，1：来自直播，2：来自评论，3：来自回复</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.sub_game_videos">
+<code class="descclassname">wanx.views.video.</code><code class="descname">sub_game_videos</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.sub_game_videos" title="永久链接至目标">¶</a></dt>
+<dd><p>获取用户已订阅游戏的视频 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/users/&lt;string:uid&gt;/subscriptions</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;videos&#8217;: list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.tags_videos">
+<code class="descclassname">wanx.views.video.</code><code class="descname">tags_videos</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.tags_videos" title="永久链接至目标">¶</a></dt>
+<dd><p>获取标签下所有视频 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/tags/&lt;string:tid&gt;/videos</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Uri migu:</th><td class="field-body"><p class="first">/migu/tags/&lt;string:tid&gt;/videos/</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 最后时间, 0代表当前时间, 无此参数按page来分页</li>
+<li><strong>page</strong> &#8211; 页码(数据可能有重复, 建议按照maxs分页)</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;videos&#8217;: list, &#8216;end_page&#8217;: bool, &#8216;maxs&#8217;: timestamp}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.unfavorite_video">
+<code class="descclassname">wanx.views.video.</code><code class="descname">unfavorite_video</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.unfavorite_video" title="永久链接至目标">¶</a></dt>
+<dd><p>取消收藏视频 (GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/user/opt/unfavorite-video</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>video_id</strong> &#8211; 收藏视频id</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.unlike_video">
+<code class="descclassname">wanx.views.video.</code><code class="descname">unlike_video</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.unlike_video" title="永久链接至目标">¶</a></dt>
+<dd><p>取消赞视频 (GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/user/opt/like-video</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>video_id</strong> &#8211; 被赞视频id</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.update_video">
+<code class="descclassname">wanx.views.video.</code><code class="descname">update_video</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.update_video" title="永久链接至目标">¶</a></dt>
+<dd><p>修改视频&#8211;文件上传走第三方，供第三方进行回调 (POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/videos/&lt;string:vid&gt;/update-video</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>cover</strong> &#8211; 背景相对路径</li>
+<li><strong>url</strong> &#8211; 视频相对路径</li>
+<li><strong>upload_sig</strong> &#8211; 验证串</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;url&#8217;: string}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.user_followings_videos">
+<code class="descclassname">wanx.views.video.</code><code class="descname">user_followings_videos</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.user_followings_videos" title="永久链接至目标">¶</a></dt>
+<dd><p>获取用户偶像的视频 (GET&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/users/&lt;string:uid&gt;/followings/videos</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 最后时间, 0代表当前时间, 无此参数按page来分页</li>
+<li><strong>page</strong> &#8211; 页码(数据可能有重复, 建议按照maxs分页)</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;videos&#8217;: list, &#8216;end_page&#8217;: bool, &#8216;maxs&#8217;: timestamp}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.user_live_videos">
+<code class="descclassname">wanx.views.video.</code><code class="descname">user_live_videos</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.user_live_videos" title="永久链接至目标">¶</a></dt>
+<dd><p>获取用户直播转录播的视频 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/users/&lt;string:uid&gt;/live_videos</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 最后时间, 0代表当前时间, 无此参数按page来分页</li>
+<li><strong>page</strong> &#8211; 页码(数据可能有重复, 建议按照maxs分页)</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;videos&#8217;: list, &#8216;end_page&#8217;: bool, &#8216;maxs&#8217;: timestamp}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.user_videos">
+<code class="descclassname">wanx.views.video.</code><code class="descname">user_videos</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.user_videos" title="永久链接至目标">¶</a></dt>
+<dd><p>获取用户创建的视频 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/users/&lt;string:uid&gt;/videos</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Params game_id:</th><td class="field-body"><p class="first">游戏id, 不传取用户所有游戏的视频</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 最后时间, 0代表当前时间, 无此参数按page来分页</li>
+<li><strong>page</strong> &#8211; 页码(数据可能有重复, 建议按照maxs分页)</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;videos&#8217;: list, &#8216;end_page&#8217;: bool, &#8216;maxs&#8217;: timestamp}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.video_categories">
+<code class="descclassname">wanx.views.video.</code><code class="descname">video_categories</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.video_categories" title="永久链接至目标">¶</a></dt>
+<dd><p>获取游戏下所有有视频的视频分类(GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/videos/categories</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Param:</th><td class="field-body">game_id: 游戏ID</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;categories&#8217;: &lt;VideoCategory&gt;list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.video_topics">
+<code class="descclassname">wanx.views.video.</code><code class="descname">video_topics</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.video_topics" title="永久链接至目标">¶</a></dt>
+<dd><p>获取游戏下所有有视频的视频专题(GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/videos/topics</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;topics&#8217;: &lt;VideoTopic&gt;list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.video.topic_videos">
+<code class="descclassname">wanx.views.video.</code><code class="descname">topic_videos</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.topic_videos" title="永久链接至目标">¶</a></dt>
+<dd><p>获取某个视频专题的所有视频(GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/videos/topic_videos</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Param:</th><td class="field-body">topic_id: 专题ID</td>
+</tr>
+<tr class="field-even field"><th class="field-name">可选参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 最后时间, 0代表当前时间, 无此参数按page来分页</li>
+<li><strong>page</strong> &#8211; 页码(数据可能有重复, 建议按照maxs分页)</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;videos&#8217;: &lt;Video&gt;list, &#8216;topic&#8217;: &lt;VideoTopic&gt;, &#8216;end_page&#8217;: bool, &#8216;maxs&#8217;: timestamp}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+
+<dl class="function">
+<dt id="wanx.views.video.editor_videos">
+<code class="descclassname">wanx.views.video.</code><code class="descname">editor_videos</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.editor_videos" title="永久链接至目标">¶</a></dt>
+<dd><p>小编推荐视频(GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/videos/editor_videos</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Param:</th><td class="field-body">无</td>
+</tr>
+
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;videos&#8217;: &lt;Video&gt;list, &#8216;}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+
+<dl class="function">
+<dt id="wanx.views.video.share_top_videos">
+<code class="descclassname">wanx.views.video.</code><code class="descname">share_top_videos</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.video.share_top_videos" title="永久链接至目标">¶</a></dt>
+<dd><p>分享页热门视频(GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/videos/share_top_videos</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Param:</th><td class="field-body">video_id(视频分享页)或者user_id(直播分享页)</td>
+</tr>
+
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;videos&#8217;: &lt;Video&gt;list, &#8216;}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/wanx.views.video.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的术语，模块，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, yang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/wanx.views.video.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

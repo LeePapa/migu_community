@@ -1,0 +1,531 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>wanx.views.migu module &mdash; wanx 1.1 文档</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="wanx 1.1 文档" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-wanx.views.migu">
+<span id="wanx-views-migu-module"></span><h1>wanx.views.migu module<a class="headerlink" href="#module-wanx.views.migu" title="永久链接至标题">¶</a></h1>
+<dl class="function">
+<dt id="wanx.views.migu.migu_all_tags">
+<code class="descclassname">wanx.views.migu.</code><code class="descname">migu_all_tags</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.migu.migu_all_tags" title="永久链接至目标">¶</a></dt>
+<dd><p>获取所有标签 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/migu/tags/home/</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;tags&#8217;: list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.migu.migu_change_pwd">
+<code class="descclassname">wanx.views.migu.</code><code class="descname">migu_change_pwd</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.migu.migu_change_pwd" title="永久链接至目标">¶</a></dt>
+<dd><p>更改密码（GET|POST）</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/migu/change_password</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>phone</strong> &#8211; 手机号</li>
+<li><strong>old_pwd</strong> &#8211; 旧密码</li>
+<li><strong>new_pwd</strong> &#8211; 新密码</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.migu.migu_create_comment">
+<code class="descclassname">wanx.views.migu.</code><code class="descname">migu_create_comment</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.migu.migu_create_comment" title="永久链接至目标">¶</a></dt>
+<dd><p>咪咕平台创建评论 (GET|POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/migu/videos/&lt;string:vid&gt;/comments/submit</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>user_id</strong> &#8211; 咪咕用户id</li>
+<li><strong>content</strong> &#8211; 评论内容</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.migu.migu_elite_video">
+<code class="descclassname">wanx.views.migu.</code><code class="descname">migu_elite_video</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.migu.migu_elite_video" title="永久链接至目标">¶</a></dt>
+<dd><p>获取精选视频 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/migu/videos/elite/</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 最后时间, 0代表当前时间, 无此参数按page来分页</li>
+<li><strong>page</strong> &#8211; 页码(数据可能有重复, 建议按照maxs分页)</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;videos&#8217;: list, &#8216;end_page&#8217;: bool, &#8216;maxs&#8217;: timestamp}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.migu.migu_game_popular_videos">
+<code class="descclassname">wanx.views.migu.</code><code class="descname">migu_game_popular_videos</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.migu.migu_game_popular_videos" title="永久链接至目标">¶</a></dt>
+<dd><p>获取游戏热门视频 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/migu/games/&lt;string:bid&gt;/popular/</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>page</strong> &#8211; 页码</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;videos&#8217;: list, &#8216;end_page&#8217;: bool}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.migu.migu_home">
+<code class="descclassname">wanx.views.migu.</code><code class="descname">migu_home</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.migu.migu_home" title="永久链接至目标">¶</a></dt>
+<dd><p>获取首页信息 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/migu/home/</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;popular&#8217;: list, &#8216;whats_new&#8217;: list,
+&#8216;hottest_of_today&#8217;: list, &#8216;recommend&#8217;: list, &#8216;tags&#8217;: list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.migu.migu_register">
+<code class="descclassname">wanx.views.migu.</code><code class="descname">migu_register</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.migu.migu_register" title="永久链接至目标">¶</a></dt>
+<dd><p>用户注册（GET|POST）</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/migu/register_phone</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>phone</strong> &#8211; 手机号</li>
+<li><strong>password</strong> &#8211; 密码</li>
+<li><strong>code</strong> &#8211; 验证码</li>
+<li><strong>sessionid</strong> &#8211; 短信sessionid</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;user&#8217;: object, &#8216;ut&#8217;: string}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.migu.migu_reset_password">
+<code class="descclassname">wanx.views.migu.</code><code class="descname">migu_reset_password</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.migu.migu_reset_password" title="永久链接至目标">¶</a></dt>
+<dd><p>重置密码 (GET|POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/migu/reset_password</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>phone</strong> &#8211; 手机号</li>
+<li><strong>password</strong> &#8211; 密码</li>
+<li><strong>code</strong> &#8211; 短信验证码</li>
+<li><strong>sessionid</strong> &#8211; 短信sessionid</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.migu.migu_user_videos">
+<code class="descclassname">wanx.views.migu.</code><code class="descname">migu_user_videos</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.migu.migu_user_videos" title="永久链接至目标">¶</a></dt>
+<dd><p>获取用户创建的视频 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/migu/users/&lt;string:openid&gt;/videos/</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>game_id</strong> &#8211; 咪咕游戏id, 不传取用户所有游戏的视频</li>
+<li><strong>maxs</strong> &#8211; 最后时间, 0代表当前时间, 无此参数按page来分页</li>
+<li><strong>page</strong> &#8211; 页码(数据可能有重复, 建议按照maxs分页)</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;videos&#8217;: list, &#8216;end_page&#8217;: bool, &#8216;maxs&#8217;: timestamp}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.migu.migu_verify_phone">
+<code class="descclassname">wanx.views.migu.</code><code class="descname">migu_verify_phone</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.migu.migu_verify_phone" title="永久链接至目标">¶</a></dt>
+<dd><p>手机号码验证 (GET|POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/migu/verify_phone</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>phone</strong> &#8211; 手机号</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.migu.migu_video_comments">
+<code class="descclassname">wanx.views.migu.</code><code class="descname">migu_video_comments</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.migu.migu_video_comments" title="永久链接至目标">¶</a></dt>
+<dd><p>获取视频评论 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/migu/videos/&lt;string:vid&gt;/comments/</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>maxs</strong> &#8211; 最后时间, 0代表当前时间, 无此参数按page来分页</li>
+<li><strong>page</strong> &#8211; 页码(数据可能有重复, 建议按照maxs分页)</li>
+<li><strong>nbr</strong> &#8211; 每页数量</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;comments&#8217;: list, &#8216;end_page&#8217;: bool, &#8216;maxs&#8217;: timestamp}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.migu.send_migu_code">
+<code class="descclassname">wanx.views.migu.</code><code class="descname">send_migu_code</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.migu.send_migu_code" title="永久链接至目标">¶</a></dt>
+<dd><p>发送短信验证码 (GET|POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/migu/sms_code</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>phone</strong> &#8211; 手机号</li>
+<li><strong>action</strong> &#8211; (注册:reg  重置:reset  升级:up)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;sessionid&#8217;: string}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.migu.service_up">
+<code class="descclassname">wanx.views.migu.</code><code class="descname">service_up</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.migu.service_up" title="永久链接至目标">¶</a></dt>
+<dd><p>升级咪咕通行证 (GET|POST&amp;LOGIN)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/migu/upgrade</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>phone</strong> &#8211; 手机号</li>
+<li><strong>password</strong> &#8211; 升级密码</li>
+<li><strong>code</strong> &#8211; 短信验证码</li>
+<li><strong>sessionid</strong> &#8211; 短信sessionid</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.migu.phone_province">
+<code class="descclassname">wanx.views.migu.</code><code class="descname">phone_province</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.migu.phone_province" title="永久链接至目标">¶</a></dt>
+<dd><p>查询手机号码归属地 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/migu/phone/province</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>phone</strong> &#8211; 手机号</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;province&#8217;: string}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.migu.user_migupay_info">
+<code class="descclassname">wanx.views.migu.</code><code class="descname">user_migupay_info</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.migu.user_migupay_info" title="永久链接至目标">¶</a></dt>
+<dd><p>用户咪咕币信息及会员信息 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/migupay/user/info</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>os</strong> &#8211; 平台（ios, android）</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">
+    {<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&#8216;hide_migu_money&#8217;: bool, <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&#8216;migu_money&#8217;: { <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8216;miguTotalCount&#8217;: int,  <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8216;miguMoneyCount&#8217;: int,  <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8216;miguMarketingCount&#8217;: int <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&#8216;vip_action&#8217;: string, <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&#8216;vip&#8217;: {<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8216;vip5&#8217;: {&#8216;subscribed&#8217;: bool, &#8216;can_sub&#8217;: bool},<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8216;vip10&#8217;: {&#8216;subscribed&#8217;: bool, &#8216;can_sub&#8217;: bool}<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+    }
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+    vip5: 白银会员， vip10: 黄金会员，subscribed: 是否已订购， can_sub: 是否可订购
+    vip_action: 我的会员页面跳转地址
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.migu.unsub_game_vip">
+<code class="descclassname">wanx.views.migu.</code><code class="descname">unsub_game_vip</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.migu.unsub_game_vip" title="永久链接至目标">¶</a></dt>
+<dd><p>会员退订 (POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/migupay/vip/unsubscribe</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;ret&#8217;: bool}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.migu.migu_money_record">
+<code class="descclassname">wanx.views.migu.</code><code class="descname">migu_money_record</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.migu.migu_money_record" title="永久链接至目标">¶</a></dt>
+<dd><p>获取咪咕币充值/消费记录 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/migupay/money/record</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>query_type</strong> &#8211;查询类型；1：充值，2：支付</li>
+<li><strong>start_at</strong> &#8211;查询起始时间，格式 yyyymmddHHMMSS</li>
+<li><strong>end_at</strong> &#8211;查询结束时间，格式 yyyymmddHHMMSS</li>
+<li><strong>page</strong> &#8211;页码，int</li>
+<li><strong>nbr</strong> &#8211;页长度, int，范围1到500</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;records&#8217;: &lt;MiguMoneyRecord&gt;list, &#8216;end_page&#8217;: bool}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.migu.migu_present_record">
+<code class="descclassname">wanx.views.migu.</code><code class="descname">migu_present_record</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.migu.migu_present_record" title="永久链接至目标">¶</a></dt>
+<dd><p>获取咪咕币赠送记录 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body"><p class="first">/migupay/present/record</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+<li><strong>start_at</strong> &#8211;查询起始时间，格式 yyyymmddHHMMSS</li>
+<li><strong>end_at</strong> &#8211;查询结束时间，格式 yyyymmddHHMMSS</li>
+<li><strong>page</strong> &#8211;页码，int</li>
+<li><strong>nbr</strong> &#8211;页长度, int，范围1到500</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body"><p class="first last">{&#8216;records&#8217;: &lt;MiguPresentRecord&gt;list, &#8216;end_page&#8217;: bool}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/wanx.views.migu.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的术语，模块，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, yang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/wanx.views.migu.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

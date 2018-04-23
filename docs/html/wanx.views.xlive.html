@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>wanx.views.xlive module &mdash; wanx 1.1 文档</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="wanx 1.1 文档" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-wanx.views.xlive">
+<span id="wanx-views-xlive-module"></span><h1>wanx.views.xlive module<a class="headerlink" href="#module-wanx.views.xlive" title="永久链接至标题">¶</a></h1>
+<dl class="function">
+<dt id="wanx.views.xlive.get_category_games">
+<code class="descclassname">wanx.views.xlive.</code><code class="descname">get_category_games</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.xlive.get_category_games" title="永久链接至目标">¶</a></dt>
+<dd><p>获取直播分类列表(游戏) (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/lives/cate-games</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;games&#8217;: list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.xlive.get_game_lives">
+<code class="descclassname">wanx.views.xlive.</code><code class="descname">get_game_lives</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.xlive.get_game_lives" title="永久链接至目标">¶</a></dt>
+<dd><p>获取游戏的直播列表 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/lives/game</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>gid</strong> &#8211; 游戏ID</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;lives&#8217;: list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.xlive.get_live_info">
+<code class="descclassname">wanx.views.xlive.</code><code class="descname">get_live_info</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.xlive.get_live_info" title="永久链接至目标">¶</a></dt>
+<dd><p>获取直播信息 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/lives/info</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th>
+    <td class="field-body"><ul class="first simple">
+    <li><strong>live_id</strong> &#8211; 直播ID</li>
+    <li><strong>os</strong> &#8211; 平台</li>
+    <li><strong>channels</strong> &#8211; 渠道（可选）</li>
+    <li><strong>version_code</strong> &#8211; 版本号</li>
+</ul></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;live&#8217;: object, &#8216;task&#8217;: &lt;WatchLiveTask&gt;, &#8216;red_packet&#8217;: &lt;RedPacket&gt;, &#8216;cdrp&#8217;: &lt;RedPacket&gt;}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.xlive.get_recommend_lives">
+<code class="descclassname">wanx.views.xlive.</code><code class="descname">get_recommend_lives</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.xlive.get_recommend_lives" title="永久链接至目标">¶</a></dt>
+<dd><p>获取推荐的直播列表 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/lives/recommend</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返回:</th><td class="field-body">{&#8216;lives&#8217;: list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.xlive.play_live">
+<code class="descclassname">wanx.views.xlive.</code><code class="descname">play_live</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.xlive.play_live" title="永久链接至目标">¶</a></dt>
+<dd><p>观看直播接口 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/lives/play</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th>
+    <td class="field-body"><ul class="first simple">
+    <li><strong>live_id</strong> &#8211; 直播ID</li>
+    <li><strong>os</strong> &#8211; 平台</li>
+    <li><strong>channels</strong> &#8211; 渠道（可选）</li>
+    <li><strong>version_code</strong> &#8211; 版本号</li>
+</ul></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;ret&#8217;: bool, &#8216;task&#8217;: &lt;WatchLiveTask&gt;, &#8216;red_packet&#8217;: &lt;RedPacket&gt;, &#8216;cdrp&#8217;: &lt;RedPacket&gt;}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.xlive.share_live">
+<code class="descclassname">wanx.views.xlive.</code><code class="descname">share_live</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.xlive.share_live" title="永久链接至目标">¶</a></dt>
+<dd><p>分享直播接口 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/lives/share</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><strong>live_id</strong> &#8211; 直播ID</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;ret&#8217;: bool}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.xlive.get_match_lives">
+<code class="descclassname">wanx.views.xlive.</code><code class="descname">get_match_lives</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.xlive.get_match_lives" title="永久链接至目标">¶</a></dt>
+<dd><p>获取推荐的赛事直播 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/lives/get_match_lives</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+    <li><strong>live_user_id</strong> &#8211; 主播ID</li>
+    <li><strong>live_name</strong> &#8211; 主播间名称</li>
+</ul></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;lives&#8217;: list}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.xlive.task">
+<code class="descclassname">wanx.views.xlive.</code><code class="descname">task</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.xlive.task" title="永久链接至目标">¶</a></dt>
+<dd><p>领取直播间活动礼品 (GET|POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/lives/task</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+    <li><strong>task_id</strong> &#8211; 观看直播活动ID</li>
+    <li><strong>os</strong> &#8211; 平台</li>
+    <li><strong>channels</strong> &#8211; 渠道（可选）</li>
+    <li><strong>version_code</strong> &#8211; 版本号</li>
+    <li><strong>live_id</strong> &#8211; 直播间ID</li>
+</ul></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;ret&#8217;: bool, &#8216;task&#8217;: &lt;WatchLiveTask&gt;, &#8216;item&#8217;: &lt;WatchLiveTaskItem&gt;}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.xlive.live_redpacket">
+<code class="descclassname">wanx.views.xlive.</code><code class="descname">live_redpacket</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.xlive.live_redpacket" title="永久链接至目标">¶</a></dt>
+<dd><p>获取用户红包信息 (GET)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/lives/redpacket/info</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+    <li><strong>os</strong> &#8211; 平台</li>
+    <li><strong>channels</strong> &#8211; 渠道（可选）</li>
+    <li><strong>version_code</strong> &#8211; 版本号</li>
+    <li><strong>live_id</strong> &#8211; 直播间ID</li>
+</ul></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{ &#8216;red_packet&#8217;: &lt;RedPacket&gt;, &#8216;cdrp&#8217;: &lt;RedPacket&gt;}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.xlive.query_new_redpacket">
+<code class="descclassname">wanx.views.xlive.</code><code class="descname">query_new_redpacket</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.xlive.query_new_redpacket" title="永久链接至目标">¶</a></dt>
+<dd><p>直播间红包抽奖机会领取请求 (POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/lives/redpacket/query_new</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+    <li><strong>os</strong> &#8211; 平台</li>
+    <li><strong>channels</strong> &#8211; 渠道（可选）</li>
+    <li><strong>version_code</strong> &#8211; 版本号</li>
+    <li><strong>live_id</strong> &#8211; 直播间ID</li>
+    <li><strong>active_id</strong> &#8211; 红包活动ID（由弹幕推送获得）</li>
+</ul></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{ &#8216;red_packet&#8217;: &lt;RedPacket&gt;}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.xlive.grab_redpacket">
+<code class="descclassname">wanx.views.xlive.</code><code class="descname">grab_redpacket</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.xlive.grab_redpacket" title="永久链接至目标">¶</a></dt>
+<dd><p>直播间红包抢夺 (POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/lives/redpacket/grab</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+    <li><strong>os</strong> &#8211; 平台</li>
+    <li><strong>channels</strong> &#8211; 渠道（可选）</li>
+    <li><strong>version_code</strong> &#8211; 版本号</li>
+    <li><strong>live_id</strong> &#8211; 直播间ID</li>
+    <li><strong>source_id</strong> &#8211; 红包ID（由返回的红包信息&lt;RedPacket&gt;的红包ID获得）</li>
+</ul></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;ret&#8217;: bool, &#8216;red_packet&#8217;: &lt;RedPacket&gt;, &#8216;item&#8217;: &lt;RedPacketItem&gt;, &#8216;current_red_packet&#8217;: &lt;RedPacket&gt;}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="wanx.views.xlive.query_shared_redpacket">
+<code class="descclassname">wanx.views.xlive.</code><code class="descname">query_shared_redpacket</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wanx.views.xlive.query_shared_redpacket" title="永久链接至目标">¶</a></dt>
+<dd><p>分享红包领取请求 (POST)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Uri:</th><td class="field-body">/share/redpacket/query_new</td>
+</tr>
+<tr class="field-even field"><th class="field-name">参数:</th><td class="field-body"><ul class="first simple">
+    <li><strong>source_id</strong> &#8211; 红包ID（由分享链接所带参数（同名）获得）</li>
+</ul></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返回:</th><td class="field-body">{&#8216;ret&#8217;: bool}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/wanx.views.xlive.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的术语，模块，类或者函数名称进行搜索
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, yang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/wanx.views.xlive.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
